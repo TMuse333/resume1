@@ -1,0 +1,152 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.App-header {
+  font-size: 1rem;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  padding-bottom: 2rem;
+}
+.carousel-images {
+  position: relative;
+  border-radius: 10px;
+  
+  margin: auto;
+  overflow: hidden;
+}
+.carousel-images img {
+  height: 300px;
+  border-radius: 8px;
+  border: #ff00008e solid 2px;
+}
+.slide_direction {
+  display: flex;
+  justify-content: space-between;
+}
+.left,
+.right {
+  background-color: #fb666675;
+  color: #fff;
+  padding: 5px 6px 15px 10px;
+ 
+  border-radius: 50%;
+  position: absolute;
+  top: 10;
+  bottom: 0;
+  left:50;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  height: 10px;
+  width: 10px;
+}
+.left {
+  left: 0;
+}
+.right {
+  right: 0;
+}
+.carousel-indicator {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.dot {
+  background-color: #333;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+.active {
+  background-color: #fa2020;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100px;
+}
+
+.header-list {
+  display: flex;
+  flex-direction: column;
+  text-align: flex-end;
+}
+
+.header-list li {
+  margin-bottom: 1rem;
+  list-style: none;
+}
+
+.nav-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  width: 40px; /* Set the button width */
+  height: 40px; /* Set the button height */
+  font-size: 20px; /* Adjust the icon size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #007bff; /* Set the button text color */
+}
+
+.nav-list {
+  display: none; /* Hide the list by default */
+  flex-direction: column;
+  position: absolute;
+  top: 55%;
+  right: 10%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.nav-list li {
+  padding: 0.5rem;
+  list-style: none;
+  background-color: #fff; /* Set the background color for list items */
+  border-bottom: 1px solid #ccc; /* Add a bottom border to separate list items */
+}
+
+/* Show the list when the button is clicked */
+.header-list li:hover .nav-list {
+  display: flex;
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f4f4f4; /* Set the background color for the container */
+  padding: 2rem;
+}
+
+.about {
+  text-align: center;
+  max-width: 600px; /* Set the maximum width of the content */
+}
+
+.about h2 {
+  font-size: 24px;
+  color: #333; /* Set the text color for the heading */
+  margin-bottom: 1rem;
+}
+
+.about p {
+  font-size: 16px;
+  color: #555; /* Set the text color for the paragraph */
+}
+
+
+
+
