@@ -9,7 +9,7 @@ const Gallery = () => {
   const images = [
     vegeta,
    majinVegeta,
-  
+    'image3.jpg',
     // Add more image URLs as needed
   ];
 

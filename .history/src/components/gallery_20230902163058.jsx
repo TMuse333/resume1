@@ -3,13 +3,16 @@ import majinVegeta from '../images/majin-vegeta.png'
 import React, { useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { motion,useAnimation } from 'framer-motion'
-;
+
+import React, { useState } from 'react';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const Gallery = () => {
   const images = [
-    vegeta,
-   majinVegeta,
-  
+    'image1.jpg',
+    'image2.jpg',
+    'image3.jpg',
     // Add more image URLs as needed
   ];
 

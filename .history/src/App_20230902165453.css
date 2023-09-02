@@ -31,17 +31,15 @@
 .right {
   background-color: #fb666675;
   color: #fff;
-  padding: 5px 6px 15px 10px;
- 
+  padding: 10px 8px 8px 13px;
+  /* margin: 0 20px; */
   border-radius: 50%;
   position: absolute;
-  top: 10;
+  top: 0;
   bottom: 0;
-  left:50;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  height: 10px;
-  width: 10px;
+  margin: auto 10px;
+  height: 25px;
+  width: 25px;
 }
 .left {
   left: 0;
