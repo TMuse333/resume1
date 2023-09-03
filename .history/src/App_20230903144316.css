@@ -162,3 +162,36 @@ body, html {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.skill-description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background for description */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.skill-card.active .skill-name {
+  filter: blur(5px); /* Apply blur to skill name when active */
+}
+
+.skill-card.active .skill-description {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+

@@ -16,7 +16,6 @@ function App() {
     <Navbar/>
     <About/>
     <Gallery/>
-    <Skills/>
 
     </div>
     </>
