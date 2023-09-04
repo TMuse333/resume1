@@ -1,19 +1,24 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { skills } from './skillDesc';
-import { useSkillContext } from "../context/context";
 
 
 
 const OtherPage = () => {
 
     const { skillIndex } = useParams();
-    const selectedSkill = skills[skillIndex];
-    const { selectedSkillIndex } = useSkillContext();
+
+  // Fetch the corresponding skill from the skills array
+  const selectedSkill = skills[skillIndex];
 
     return(
         <div>
-       {selectedSkillIndex}
+       
+          <div>
+            <h2>{selectedSkill.name}</h2>
+            <p>{selectedSkill.description}</p>
+          </div>
+        )}
         <Link to="/">Go back</Link>
       </div>
     )

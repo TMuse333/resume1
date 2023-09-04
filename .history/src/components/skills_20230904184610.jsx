@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link  } from 'react-router-dom';
 import { skills } from './skillDesc';
-import { useSkillContext } from '../context/context';
+import { useSk}
 
 
 const Skills = () => {
   const [inView, setInView] = useState(false);
   const [selectedSkill, setSelectedSkill] = useState(null);
-  const { selectedSkillIndex, setSelectedSkillIndex } = useSkillContext();
 
 
 
@@ -21,7 +20,7 @@ const Skills = () => {
 
   const handleSkillClick = (index) => {
     setSelectedSkill(index);
-    setSelectedSkillIndex(index);
+   
     
     // Filter out the skills that were clicked
     const notClickedSkills = skills.filter((skill, skillIndex) => skillIndex !== index);
@@ -82,7 +81,7 @@ const Skills = () => {
               className="skill-name"
               onClick={() => handleSkillClick(index)}
               style={{
-                filter: selectedSkill !== null && index === selectedSkill ? 'blur(5px)' : 'none'
+                filter: selectedSkill !== null  ? 'blur(5px)' : 'none'
               }}
               
             >

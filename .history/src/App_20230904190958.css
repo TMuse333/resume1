@@ -186,7 +186,7 @@ body, html {
 }
 
 .description-content{
-  
+  margin-bottom: ;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -26,7 +26,6 @@ function App() {
       <Route path='/' element={<MainLayout/>}/>
      <Route path="/other-page" element={<OtherPage/>}/>
       </Routes>
-      </SkillProvider>
 
    
    </>

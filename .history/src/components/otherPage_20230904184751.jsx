@@ -13,7 +13,7 @@ const OtherPage = () => {
 
     return(
         <div>
-       {selectedSkillIndex}
+       
         <Link to="/">Go back</Link>
       </div>
     )

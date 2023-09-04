@@ -20,13 +20,11 @@ import { SkillProvider } from './context/context'
 function App() {
   return (
     <>
-    <SkillProvider>
    <Routes>
       
       <Route path='/' element={<MainLayout/>}/>
      <Route path="/other-page" element={<OtherPage/>}/>
       </Routes>
-      </SkillProvider>
 
    
    </>

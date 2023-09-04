@@ -9,11 +9,10 @@ const OtherPage = () => {
 
     const { skillIndex } = useParams();
     const selectedSkill = skills[skillIndex];
-    const { selectedSkillIndex } = useSkillContext();
 
     return(
         <div>
-       {selectedSkillIndex}
+       
         <Link to="/">Go back</Link>
       </div>
     )

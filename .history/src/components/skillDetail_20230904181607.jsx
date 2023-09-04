@@ -1,11 +1,13 @@
 // SkillDetail.js
-import Skills from './skills';
+import {skills}
 import React from 'react';
-import { skills } from './skillDesc';
 
 const SkillDetail = (props) => {
   // Access the skillId from route parameters
-  
+  const skillId = props.match.params.skillId;
+
+  // Retrieve the detailed information for the selected skill based on skillId
+  const skillDetail = getSkillDetailById(skillId); // Implement this function
 
   return (
     <div className="skill-detail">

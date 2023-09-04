@@ -82,7 +82,7 @@ const Skills = () => {
               className="skill-name"
               onClick={() => handleSkillClick(index)}
               style={{
-                filter: selectedSkill !== null && index === selectedSkill ? 'blur(5px)' : 'none'
+                filter: selectedSkill !== null &&in ? 'blur(5px)' : 'none'
               }}
               
             >

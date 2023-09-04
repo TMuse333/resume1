@@ -140,10 +140,6 @@ body, html {
 }
 
 .skill-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; 
  
   border: 1px solid #ddd;
   padding: 1rem;
@@ -186,12 +182,11 @@ body, html {
 }
 
 .description-content{
-  
+  transform: translateY(-80px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #333;
- 
+  background-color: ;
   
 }
 
