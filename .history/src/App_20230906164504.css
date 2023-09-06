@@ -56,7 +56,6 @@ body, html {
   flex-direction: column;
  
   padding: 2rem;
-  background: linear-gradient(to right, #F4A460, #FF8C00); 
 }
 
 .about {
@@ -222,29 +221,6 @@ body, html {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.title h2 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Use a dominant font family */
-  font-weight: bold; /* Apply a bold weight */
-   /* Set a large font size */
-  letter-spacing: 0px; /* Adjust letter spacing for clarity */
-  text-transform: uppercase; /* Optionally, transform text to uppercase */
-  color: #f7be79; 
-}
-
-.title p{
-  font-family: 'Times New Roman', serif; /* Choose a serif font for an intellectual touch */
-  font-weight: normal; /* Adjust font weight as needed */
-   /* Set an appropriate font size */
-  letter-spacing: 0.5px; /* Adjust letter spacing for clarity */
-  color: #1f140f;
-  white-space: nowrap;
-  text-align: center;
-}
-
-body {
-  
-  /* Add other CSS properties here */
-}
 
 
 /* .quantum-background {

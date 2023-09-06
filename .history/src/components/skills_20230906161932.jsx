@@ -48,21 +48,21 @@ const Skills = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      skills.forEach((skill, index) => {
+      skills.forEach(( index) => {
         const skillsSection = document.getElementById(`skill-${index}`);
         if (skillsSection) {
           const { top } = skillsSection.getBoundingClientRect();
   
-       
+         
           const threshold = 100
   
           // Check if the skills section is in the viewport with the calculated threshold
           const isInView = top < window.innerHeight - threshold ;
-      //    console.log(`Skill ${index} - top: ${top}, window.innerHeight - threshold: ${window.innerHeight - threshold}, isInView: ${isInView}`);
+
           // Update the skillsInView array with the new in-view state
           setSkillsInView((prevSkillsInView) => {
             const newSkillsInView = [...prevSkillsInView];
-            newSkillsInView[index] = isInView; // Update the state to true if already in view
+            newSkillsInView[index] = isInView || new; // Update the state to true if already in view
             return newSkillsInView;
           });
         }

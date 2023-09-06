@@ -51,18 +51,18 @@ const Skills = () => {
       skills.forEach((skill, index) => {
         const skillsSection = document.getElementById(`skill-${index}`);
         if (skillsSection) {
-          const { top } = skillsSection.getBoundingClientRect();
+          const { top, bottom } = skillsSection.getBoundingClientRect();
   
-       
-          const threshold = 100
+          const baseThreshold = 100;
+          const threshold = baseThreshold
   
           // Check if the skills section is in the viewport with the calculated threshold
           const isInView = top < window.innerHeight - threshold ;
-      //    console.log(`Skill ${index} - top: ${top}, window.innerHeight - threshold: ${window.innerHeight - threshold}, isInView: ${isInView}`);
+
           // Update the skillsInView array with the new in-view state
           setSkillsInView((prevSkillsInView) => {
             const newSkillsInView = [...prevSkillsInView];
-            newSkillsInView[index] = isInView; // Update the state to true if already in view
+            newSkillsInView[index] = newSkillsInView[index]  // Update the state to true if already in view
             return newSkillsInView;
           });
         }

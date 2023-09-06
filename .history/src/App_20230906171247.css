@@ -56,7 +56,6 @@ body, html {
   flex-direction: column;
  
   padding: 2rem;
-  background: linear-gradient(to right, #F4A460, #FF8C00); 
 }
 
 .about {
