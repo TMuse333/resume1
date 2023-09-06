@@ -59,8 +59,6 @@ body, html {
   background: linear-gradient(to right, #F4A460, #FF8C00); 
 }
 
-
-
 .about {
   text-align: center;
   max-width: 600px; /* Set the maximum width of the content */
@@ -73,14 +71,8 @@ body, html {
   text-align: center;
   justify-content: center;
   align-items: center;
-  /* background: linear-gradient(to right, rgb(104, 73, 11), #FFA500); */
-
-  border-radius: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-
-  border: 3px solid black;
-  margin-bottom: 10px;
+  background: linear-gradient(to right, #FFD700, #FFA500);
+  bor
 
 }
 

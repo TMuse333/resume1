@@ -28,7 +28,7 @@ const About = () => {
       transition: {
        
          duration: 1,
-          delay: 1.5 },
+          delay: 0.5 },
     },
   };
 
@@ -38,9 +38,9 @@ const About = () => {
       y: 0,
       transition: {
         type: 'spring', 
-        duration: 1.2,
+        duration: 0.8,
         delay: 1,
-        bounce: 0.5, // Adjust the bounce value to control the bounce intensity
+        bounce: 0.3, // Adjust the bounce value to control the bounce intensity
       },
     },
   };

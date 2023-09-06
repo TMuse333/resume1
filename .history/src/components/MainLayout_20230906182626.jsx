@@ -8,14 +8,12 @@ import Gradient from './gradient';
 
 function MainLayout({ children }) {
   return (
-  //   <div className='quantum-background'>
-  //  <Navbar/>
-  //  <About/>
-  //  <Skills/>
-    <Screensaver/>
-  //   </div>
- 
- 
+    <div className='quantum-background'>
+   <Navbar/>
+   <About/>
+   <Skills/>
+   <Screensaver/>
+    </div>
   );
 }
 

@@ -28,7 +28,7 @@ const About = () => {
       transition: {
        
          duration: 1,
-          delay: 1.5 },
+          delay: 0.5 },
     },
   };
 

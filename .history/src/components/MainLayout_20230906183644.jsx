@@ -14,7 +14,7 @@ function MainLayout({ children }) {
   //  <Skills/>
     <Screensaver/>
   //   </div>
- 
+  <div></div>
  
   );
 }

@@ -28,19 +28,19 @@ const About = () => {
       transition: {
        
          duration: 1,
-          delay: 1.5 },
+          delay: 0.5 },
     },
   };
 
   const textVariants = {
     hidden: { y: -350 },
     visible: {
-      y: 0,
+      x: 0,
       transition: {
-        type: 'spring', 
-        duration: 1.2,
+        type: 'spring', // Use the spring type for a bounce effect
+        duration: 0.8,
         delay: 1,
-        bounce: 0.5, // Adjust the bounce value to control the bounce intensity
+        bounce: 0.3, // Adjust the bounce value to control the bounce intensity
       },
     },
   };
