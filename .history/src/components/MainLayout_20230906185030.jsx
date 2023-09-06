@@ -12,7 +12,7 @@ function MainLayout({ children }) {
    <Navbar/>
    <About/>
    <Skills/>
-    {/* <Screensaver/> */}
+    <Screensaver/>
   //   </div>
  
  

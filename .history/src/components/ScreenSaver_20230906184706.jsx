@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Screensaver = () => {
   const elementSize = 50; // Size of the screensaver element
-  const speed = 0.5; // Desired speed of the motion
+  const speed = 1; // Desired speed of the motion
   const screenWidth = window.innerWidth;
   const screenHeight = window.innerHeight;
 
@@ -54,17 +54,16 @@ const Screensaver = () => {
     >
       <div
         style={{
-          
+          width: `${elementSize}px`,
+          height: `${elementSize}px`,
           backgroundImage: `linear-gradient(to right, ${gradientColors.start}, ${gradientColors.end})`,
           position: 'fixed',
-          // top: `${gradientPosition.y}px`,
-          // left: `${gradientPosition.x}px`,
+          top: `${gradientPosition.y}px`,
+          left: `${gradientPosition.x}px`,
           color: 'white',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          width:'100vw',
-          height:'100vh'
         }}
       >
         slat

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Screensaver = () => {
   const elementSize = 50; // Size of the screensaver element
-  const speed = 0.5; // Desired speed of the motion
+  const speed = 100; // Desired speed of the motion
   const screenWidth = window.innerWidth;
   const screenHeight = window.innerHeight;
 
