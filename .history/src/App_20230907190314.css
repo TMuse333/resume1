@@ -2,8 +2,8 @@
 
 
 body, html {
-
-  
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -356,7 +356,7 @@ body {
   flex-direction: column; /* Stack child elements vertically */
   align-items: center; /* Center horizontally */
   justify-content: center; /* Center vertically */
- 
+  margin-top: 30px;
   padding: 15px;
   width: 200px;
   height: 375px;
@@ -365,7 +365,7 @@ body {
 }
 
 .experience-description img{
-  
+  margin-top: ;
   width:15rem;
   height:20rem;
   

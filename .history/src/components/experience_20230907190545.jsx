@@ -24,7 +24,7 @@ const handleMouseLeave = () => {
         </div>
         <div className='experience-description'>
 
-            <h2>Websites</h2>
+            <h2>W</h2>
 
             <img src={vegeta}
             />

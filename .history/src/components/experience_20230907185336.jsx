@@ -5,7 +5,10 @@ const Experience = (props) => {
     const [hovered, setHovered] = useState(false)
   const { title, company, date, description, technologies } = props;
 
-
+const style={
+    height:'200px',
+    width:
+}
 
 const handleMouseEnter = () => {
     setHovered(true)
@@ -20,14 +23,14 @@ const handleMouseLeave = () => {
     <div className="experience">
       <div className="experience-content">
         <div className='details'>
-      
+        <h3 >{title}</h3>
+        <p >{company}</p>
+        <p >{date}</p>
         </div>
         <div className='experience-description'>
 
-            <h2>Websites</h2>
-
             <img src={vegeta}
-            />
+            style={style}/>
 
         <p >
             {description}</p>

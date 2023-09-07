@@ -10,12 +10,12 @@ import ExperienceCarousel from './experienceCarousel';
 
 function MainLayout({ children }) {
   return (
-   <>
+   <></>
    <Navbar/>
    <About/>
    <Skills/>
     <ExperienceCarousel/>
-    </>
+  
  
  
   );

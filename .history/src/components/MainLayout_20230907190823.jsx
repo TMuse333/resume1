@@ -15,7 +15,7 @@ function MainLayout({ children }) {
    <About/>
    <Skills/>
     <ExperienceCarousel/>
-    </>
+  
  
  
   );
