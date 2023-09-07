@@ -51,7 +51,7 @@ const Skills = () => {
       skills.forEach((skill, index) => {
         const skillsSection = document.getElementById(`skill-${index}`);
         if (skillsSection) {
-          const { top} = skillsSection.getBoundingClientRect();
+          const { top, bottom } = skillsSection.getBoundingClientRect();
   
        
           const threshold = 100

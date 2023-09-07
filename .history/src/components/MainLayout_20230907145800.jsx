@@ -3,9 +3,7 @@ import Navbar from './Navbar';
 import About from './about';
 import Skills from './skills';
 import Screensaver from './ScreenSaver';
-
-import Experience from './experience';
-import ExperienceCarousel from './experienceCarousel';
+import Gradient from './gradient';
  // Replace with the actual path to your Navbar component
 
 function MainLayout({ children }) {
@@ -14,7 +12,7 @@ function MainLayout({ children }) {
    <Navbar/>
    <About/>
    <Skills/>
-    <ExperienceCarousel/>
+
     </div>
  
  

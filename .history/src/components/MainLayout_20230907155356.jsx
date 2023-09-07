@@ -14,7 +14,7 @@ function MainLayout({ children }) {
    <Navbar/>
    <About/>
    <Skills/>
-    <ExperienceCarousel/>
+    <Experience/>
     </div>
  
  
