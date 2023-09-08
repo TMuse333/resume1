@@ -341,9 +341,8 @@ body {
   display: flex;
   overflow: auto;
   white-space: nowrap;
-  padding-left: 10vw;
+  padding-left: 50px;
   max-width: 100vw;
-  gap:40px;
  
   
 

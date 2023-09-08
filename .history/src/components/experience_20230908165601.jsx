@@ -8,7 +8,7 @@ const Experience = (props) => {
 
   const handleScroll = (e) => {
     const deltaX = e.deltaX; // Get horizontal scroll amount
-    const maxTranslateX = window.innerWidth - 350; // Adjust this value if needed
+    const maxTranslateX = window.innerWidth - 500; // Adjust this value if needed
     const minTranslateX = -(window.innerWidth - 215); // 215 is the width of the image
     let newTranslateX = translateX - deltaX;
 
@@ -32,15 +32,22 @@ const Experience = (props) => {
     <>
       <div
         className='card-container'
-       // onWheel={handleScroll}
-      //  onMouseUp={handleScrollEnd} // Detect scroll end when the mouse button is released
-       
+        onWheel={handleScroll}
+        onMouseUp={handleScrollEnd} // Detect scroll end when the mouse button is released
+        style={{
+          transform: `translateX(${translateX}px)`,
+          transition: isScrolling ? 'transform 0.3s ease' : 'none', // Apply transition only during scrolling
+        }}
       >
         <h2
-         >{title}</h2>
+         style={{
+          transform: `translateX(${translateX}px)`,
+        }}>{title}</h2>
         <div
           className='image-container'
-         
+          style={{
+            transform: `translateX(${translateX}px)`,
+          }}
         >
           <img
             src={image}
@@ -52,7 +59,9 @@ const Experience = (props) => {
           />
         </div>
         <p
-     >{description}</p>
+         style={{
+          transform: `translateX(${translateX}px)`,
+        }}>{description}</p>
       </div>
     </>
   );

@@ -32,15 +32,22 @@ const Experience = (props) => {
     <>
       <div
         className='card-container'
-       // onWheel={handleScroll}
+        onWheel={handleScroll}
       //  onMouseUp={handleScrollEnd} // Detect scroll end when the mouse button is released
-       
+        style={{
+          transform: `translateX(${translateX}px)`,
+          transition: isScrolling ? 'transform 0.3s ease' : 'none', // Apply transition only during scrolling
+        }}
       >
         <h2
-         >{title}</h2>
+         style={{
+          transform: `translateX(${translateX}px)`,
+        }}>{title}</h2>
         <div
           className='image-container'
-         
+          style={{
+            transform: `translateX(${translateX}px)`,
+          }}
         >
           <img
             src={image}

@@ -327,7 +327,9 @@ body {
   align-items: center; /* Center horizontally */
   justify-content: center; /* Center vertically */
   text-align: center;
- 
+  width: min-content; 
+  overflow-x: auto; 
+  width:100vw;
 
 
 
@@ -339,14 +341,9 @@ body {
 .images-container{
   
   display: flex;
-  overflow: auto;
-  white-space: nowrap;
-  padding-left: 10vw;
-  max-width: 100vw;
-  gap:40px;
- 
-  
-
+  overflow-x: scroll;
+  gap: 50px;
+  width: 100v;
  
 
 }

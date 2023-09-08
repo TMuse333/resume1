@@ -339,13 +339,10 @@ body {
 .images-container{
   
   display: flex;
-  overflow: auto;
-  white-space: nowrap;
-  padding-left: 10vw;
+  overflow: scroll;
+  gap: 50px;
   max-width: 100vw;
-  gap:40px;
- 
-  
+  margin
 
  
 
