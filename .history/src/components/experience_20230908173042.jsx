@@ -18,29 +18,18 @@ const ExperienceCarousel = () => {
 
   return (
     <div className="carousel-container">
-      <button onClick={handlePrev}>Previous</button>
-      <AnimatePresence initial={false}>
-        <motion.div
-          key={activeIndex}
-          initial={{ opacity: 0, x: 100 }}
-          animate={{
-            opacity: 1,
-            x: 0,
-            transition: {
-              type: 'spring',
-              stiffness: 260,
-              damping: 20,
-            },
-          }}
-          exit={{ opacity: 0, x: -100 }}
-        >
-          <Experience {...experiences[activeIndex]} />
-        </motion.div>
-      </AnimatePresence>
-      <button onClick={handleNext}>Next</button>
-    </div>
-  );
+ 
+    {experiences.map((experience) => {
+      <Experience
+      title={experience.title}
+      image={experience.image}
+      description={experience.description}
+      />
+    })}
   
+</div>
+
+  );
 };
 
 export default ExperienceCarousel;

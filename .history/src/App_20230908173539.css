@@ -336,15 +336,6 @@ body {
 
 }
 
-.carousel-container{
-  display: flex;
-}
-
-.carousel-container button {
-  height: 30px;
-}
-
-
 .images-container{
   
   display: flex;
