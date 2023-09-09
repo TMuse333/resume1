@@ -8,34 +8,32 @@ const ExperienceCarousel = () => {
   const [shiftAmount, setShiftAmount] = useState(0);
   const [rightClicked, setRightClicked] = useState(false)
   const [leftClicked, setLeftClicked] = useState(false)
-  const [timesClicked, setTimesClicked] = useState(0)
 
   const handleNext = () => {
     const nextIndex = (activeIndex + 1) % experiences.length;
     setActiveIndex(nextIndex);
-    setShiftAmount(shiftAmount + 170)
-    setRightClicked(true) // Increase shift amount by a fixed value (e.g., 150)
+    setShiftAmount(shiftAmount + 150);
+    setRightClicked(true) // Increase shift amount by 30% with each click
   };
 
   const handlePrev = () => {
     const prevIndex = (activeIndex - 1 + experiences.length) % experiences.length;
     setActiveIndex(prevIndex);
-    setShiftAmount(shiftAmount - 170);
-    setLeftClicked(true) // Decrease shift amount by a fixed value (e.g., 150)
+    setShiftAmount(shiftAmount - 130);
+    setLeftClicked(true) // Decrease shift amount by 30% with each click
   };
 
   const customVariant = (index) => ({
     hidden: {
-      x: `${100 + (index * 50) + shiftAmount}%`, // Calculate initial x position to match the gap
+      x: `${60 + index * 10 + shiftAmount}%`, // Calculate initial x position with shift
     },
     visible: {
-      x: `${100 + (index * 50) + shiftAmount + 20}%`, // Shift by 20%
+      x: `${80 + index * 10 + shiftAmount + 20}%`, // Shift by 20%
       transition: {
         duration: 0.5,
       },
     },
   });
-  
 
   const neutral = (index) => ({
     hidden: {

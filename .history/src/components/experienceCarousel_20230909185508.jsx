@@ -26,10 +26,10 @@ const ExperienceCarousel = () => {
 
   const customVariant = (index) => ({
     hidden: {
-      x: `${100 + (index * 50) + shiftAmount}%`, // Calculate initial x position to match the gap
+      x: `${100 + index * 50 + shiftAmount}%`, // Calculate initial x position to match the gap
     },
     visible: {
-      x: `${100 + (index * 50) + shiftAmount + 20}%`, // Shift by 20%
+      x: `${100 + index * 50 + shiftAmount + 20}%`, // Shift by 20%
       transition: {
         duration: 0.5,
       },

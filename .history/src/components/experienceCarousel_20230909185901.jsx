@@ -5,57 +5,46 @@ import { experiences } from './skillDesc'; // Import your experiences array
 
 const ExperienceCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [shiftAmount, setShiftAmount] = useState(0);
-  const [rightClicked, setRightClicked] = useState(false)
-  const [leftClicked, setLeftClicked] = useState(false)
-  const [timesClicked, setTimesClicked] = useState(0)
 
   const handleNext = () => {
     const nextIndex = (activeIndex + 1) % experiences.length;
     setActiveIndex(nextIndex);
-    setShiftAmount(shiftAmount + 170)
-    setRightClicked(true) // Increase shift amount by a fixed value (e.g., 150)
   };
 
   const handlePrev = () => {
     const prevIndex = (activeIndex - 1 + experiences.length) % experiences.length;
     setActiveIndex(prevIndex);
-    setShiftAmount(shiftAmount - 170);
-    setLeftClicked(true) // Decrease shift amount by a fixed value (e.g., 150)
   };
 
-  const customVariant = (index) => ({
+  const containerStyles = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100vh', // Adjust to your desired height
+    overflow: 'hidden',
+  };
+
+  const customVariant = {
     hidden: {
-      x: `${100 + (index * 50) + shiftAmount}%`, // Calculate initial x position to match the gap
+      x: '100%',
     },
     visible: {
-      x: `${100 + (index * 50) + shiftAmount + 20}%`, // Shift by 20%
+      x: '0%',
       transition: {
         duration: 0.5,
       },
     },
-  });
-  
-
-  const neutral = (index) => ({
-    hidden: {
-      x: `${100 + index * 50}%`, // Calculate initial x position based on index
-    },
-    visible: {
-      x: `${100 + index * 50}%`, // Calculate visible x position based on index
-    },
-  });
-  
+  };
 
   return (
     <div className='container'>
-      <div className="carousel-container">
+      <div style={containerStyles}>
         {experiences.map((experience, index) => (
           <motion.div
             key={experience.title}
             initial="hidden"
-            animate="visible"
-            variants={rightClicked || leftClicked? customVariant(index) : neutral(index)}
+            animate={index === activeIndex ? 'visible' : 'hidden'}
+            variants={customVariant}
           >
             <Experience
               title={experience.title}
