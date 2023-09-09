@@ -6,7 +6,7 @@ import { experiences } from './skillDesc'; // Import your experiences array
 const ExperienceCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animationDirection, setAnimationDirection] = useState(null);
-  const [rightClicked, setRightClicked] = useState(false)
+  const [leftClicked, setLeftClicked] = useState(false)
 
   const handleNext = () => {
     // setActiveIndex((prevIndex) => (prevIndex + 1) % experiences.length);
@@ -27,7 +27,7 @@ const ExperienceCarousel = () => {
       x: window.innerWidth / 4,
     },
     visible: {
-      x: -window.innerWidth * 1.2,
+      x: -window.innerWidth * 0.75,
       transition: {
         duration: 0.5,
       },
@@ -39,7 +39,7 @@ const ExperienceCarousel = () => {
       x: window.innerWidth / 4,
     },
     visible: {
-      x: "100%",
+      x: window.innerWidth * 0.75,
       transition: {
         duration: 0.5,
       },
@@ -54,25 +54,16 @@ const ExperienceCarousel = () => {
       },
     },
     visible: {
-      x: rightClicked ? "48%" : '-1000px' ,
+      x:  "48%" ,
       transition: {
-        duration: 0.8,
+        duration: 1,
       },
       // width:'1vw'
     },
   };
-
-  const neutral = {
-    hidden: {
-      x:"-50%"
-    },
-    visible:{
-      x:"-50%"
-    }
-  }
   
-  
- // 
+  : 
+  animationDirection === "rightClick" ? rightClick : null
   return (
     <div className='container'>
     
@@ -82,7 +73,7 @@ const ExperienceCarousel = () => {
    <motion.div
    key={activeIndex}
    initial="hidden"
-   animate="visible"
+  //  animate="visible"
    variants={leftTemp}
  >
    <Experience
@@ -101,8 +92,7 @@ const ExperienceCarousel = () => {
         key={activeIndex}
         initial="hidden"
         animate="visible"
-        variants={animationDirection === "leftClick" ? leftClick : 
-        animationDirection === "rightClick" ? rightClick : neutral }
+        variants={animationDirection === "leftClick" ? leftClick }
       >
         <Experience
           title={experiences[activeIndex].title}

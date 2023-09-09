@@ -54,7 +54,7 @@ const ExperienceCarousel = () => {
       },
     },
     visible: {
-      x: rightClicked ? "48%" : '-1000px' ,
+      x: leftClicked ? "48%" : '-1000px' ,
       transition: {
         duration: 0.8,
       },

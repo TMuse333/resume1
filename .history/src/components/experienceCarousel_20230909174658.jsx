@@ -6,18 +6,18 @@ import { experiences } from './skillDesc'; // Import your experiences array
 const ExperienceCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animationDirection, setAnimationDirection] = useState(null);
-  const [rightClicked, setRightClicked] = useState(false)
+  const [leftClicked, setLeftClicked] = useState(false)
 
   const handleNext = () => {
-    // setActiveIndex((prevIndex) => (prevIndex + 1) % experiences.length);
+    setActiveIndex((prevIndex) => (prevIndex + 1) % experiences.length);
     setAnimationDirection("rightClick");
     setLeftClicked(true)
   };
 
   const handlePrev = () => {
-    // setActiveIndex((prevIndex) =>
-    //   prevIndex === 0 ? experiences.length - 1 : prevIndex - 1
-    // );
+    setActiveIndex((prevIndex) =>
+      prevIndex === 0 ? experiences.length - 1 : prevIndex - 1
+    );
     setAnimationDirection("leftClick");
    
   };
@@ -54,7 +54,7 @@ const ExperienceCarousel = () => {
       },
     },
     visible: {
-      x: rightClicked ? "48%" : '-1000px' ,
+      x: leftClicked ? "48%" : '-1000px' ,
       transition: {
         duration: 0.8,
       },

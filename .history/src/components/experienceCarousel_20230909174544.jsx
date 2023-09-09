@@ -6,7 +6,7 @@ import { experiences } from './skillDesc'; // Import your experiences array
 const ExperienceCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animationDirection, setAnimationDirection] = useState(null);
-  const [rightClicked, setRightClicked] = useState(false)
+  const [leftClicked, setLeftClicked] = useState(false)
 
   const handleNext = () => {
     // setActiveIndex((prevIndex) => (prevIndex + 1) % experiences.length);
@@ -27,7 +27,7 @@ const ExperienceCarousel = () => {
       x: window.innerWidth / 4,
     },
     visible: {
-      x: -window.innerWidth * 1.2,
+      x: -window.innerWidth ,
       transition: {
         duration: 0.5,
       },
@@ -54,7 +54,7 @@ const ExperienceCarousel = () => {
       },
     },
     visible: {
-      x: rightClicked ? "48%" : '-1000px' ,
+      x: leftClicked ? "48%" : '-1000px' ,
       transition: {
         duration: 0.8,
       },
