@@ -6,12 +6,10 @@ import { experiences } from './skillDesc'; // Import your experiences array
 const ExperienceCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animationDirection, setAnimationDirection] = useState(null);
-  const [leftClicked, setLeftClicked] = useState(false)
 
   const handleNext = () => {
     // setActiveIndex((prevIndex) => (prevIndex + 1) % experiences.length);
     setAnimationDirection("rightClick");
-    setLeftClicked(true)
   };
 
   const handlePrev = () => {
@@ -19,12 +17,11 @@ const ExperienceCarousel = () => {
     //   prevIndex === 0 ? experiences.length - 1 : prevIndex - 1
     // );
     setAnimationDirection("leftClick");
-   
   };
 
   const leftClick = {
     hidden: {
-      x: window.innerWidth / 4,
+      x: 0,
     },
     visible: {
       x: -window.innerWidth * 0.75,
@@ -36,7 +33,7 @@ const ExperienceCarousel = () => {
 
   const rightClick = {
     hidden: {
-      x: window.innerWidth / 4,
+      x: 0,
     },
     visible: {
       x: window.innerWidth * 0.75,
@@ -46,48 +43,12 @@ const ExperienceCarousel = () => {
     },
   };
 
-  const leftTemp = {
-    hidden: {
-      x: -1000,
-      transition: {
-        duration: 0.5,
-      },
-    },
-    visible: {
-      x:  "-1.5%" ,
-      transition: {
-        duration: 0.8,
-      },
-      // width:'1vw'
-    },
-  };
-  
-
   return (
-    <div className='container'>
     
     <div className="carousel-container">
-     
-{leftClicked && (
-   <motion.div
-   key={activeIndex}
-   initial="hidden"
-   animate="visible"
-   variants={leftTemp}
- >
-   <Experience
-     title={experiences[1].title}
-     image={experiences[1].image}
-     description={experiences[1].description}
-   />
- </motion.div> 
+      <button onClick={handlePrev}>Previous</button>
 
-)}
-
-   
-       
-
-      {/* <motion.div
+      <motion.div
         key={activeIndex}
         initial="hidden"
         animate="visible"
@@ -99,16 +60,24 @@ const ExperienceCarousel = () => {
           image={experiences[activeIndex].image}
           description={experiences[activeIndex].description}
         />
-      </motion.div> */}
+      </motion.div>
+      
+
+      <motion.div
+        key={activeIndex}
+        initial="hidden"
+        animate="visible"
+        variants={animationDirection === "leftClick" ? leftClick : 
+        animationDirection === "rightClick" ? rightClick : null}
+      >
+        <Experience
+          title={experiences[activeIndex].title}
+          image={experiences[activeIndex].image}
+          description={experiences[activeIndex].description}
+        />
+      </motion.div>
 
      
-    </div>
-
-    <div className='buttons'>
-
-      <button onClick={handlePrev}>Previous</button>
-      <button onClick={handleNext}>Next</button>
-    </div>
     </div>
   );
 };

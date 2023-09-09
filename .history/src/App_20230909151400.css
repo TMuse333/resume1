@@ -348,10 +348,10 @@ body {
 
 }
 
-/* .carousel-container > :nth-child(2) {
-margin-left: -10rem;
-
-} */
+.carousel-container > :nth-child(2) {
+/* margin-left: -3rem; */
+padding-left: -100px;
+}
 
 
 

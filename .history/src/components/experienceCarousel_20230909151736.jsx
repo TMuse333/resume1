@@ -48,17 +48,16 @@ const ExperienceCarousel = () => {
 
   const leftTemp = {
     hidden: {
-      x: -1000,
+      x: -window.innerWidth * 0.45,
       transition: {
         duration: 0.5,
       },
     },
     visible: {
-      x:  "-1.5%" ,
+      x: window.innerWidth / 4,
       transition: {
-        duration: 0.8,
+        duration: 0.5,
       },
-      // width:'1vw'
     },
   };
   
@@ -87,7 +86,7 @@ const ExperienceCarousel = () => {
    
        
 
-      {/* <motion.div
+      <motion.div
         key={activeIndex}
         initial="hidden"
         animate="visible"
@@ -99,7 +98,7 @@ const ExperienceCarousel = () => {
           image={experiences[activeIndex].image}
           description={experiences[activeIndex].description}
         />
-      </motion.div> */}
+      </motion.div>
 
      
     </div>

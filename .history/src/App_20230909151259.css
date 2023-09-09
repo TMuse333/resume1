@@ -348,10 +348,10 @@ body {
 
 }
 
-/* .carousel-container > :nth-child(2) {
-margin-left: -10rem;
-
-} */
+.card-container > :nth-child(2) {
+  margin-right: 20vw;
+  margin-right: auto;
+}
 
 
 

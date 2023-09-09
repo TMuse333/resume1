@@ -340,18 +340,10 @@ body {
   width: 100vw;
   display: flex;
   overflow-x: hidden;
- 
+
  justify-content: center;
 
-
- 
-
 }
-
-/* .carousel-container > :nth-child(2) {
-margin-left: -10rem;
-
-} */
 
 
 

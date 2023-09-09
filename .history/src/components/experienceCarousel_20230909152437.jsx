@@ -54,11 +54,10 @@ const ExperienceCarousel = () => {
       },
     },
     visible: {
-      x:  "-1.5%" ,
+      x:  window.innerWidth/10000 ,
       transition: {
         duration: 0.8,
       },
-      // width:'1vw'
     },
   };
   

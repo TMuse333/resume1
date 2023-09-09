@@ -337,23 +337,13 @@ body {
 }
 
 .carousel-container{
-  width: 100vw;
   display: flex;
-  overflow-x: hidden;
- 
- justify-content: center;
-
-
- 
-
+  align-items: center;
 }
 
-/* .carousel-container > :nth-child(2) {
-margin-left: -10rem;
-
-} */
-
-
+.carousel-container button {
+  height: 30px;
+}
 
 
 .images-container{

@@ -48,17 +48,16 @@ const ExperienceCarousel = () => {
 
   const leftTemp = {
     hidden: {
-      x: -1000,
+      x: -window.innerWidth * 0.45,
       transition: {
         duration: 0.5,
       },
     },
     visible: {
-      x:  "-1.5%" ,
+      x:  window.innerWidth ,
       transition: {
         duration: 0.8,
       },
-      // width:'1vw'
     },
   };
   

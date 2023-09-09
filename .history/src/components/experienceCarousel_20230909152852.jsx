@@ -54,7 +54,7 @@ const ExperienceCarousel = () => {
       },
     },
     visible: {
-      x:  "-1.5%" ,
+      x:  "-5%" ,
       transition: {
         duration: 0.8,
       },
