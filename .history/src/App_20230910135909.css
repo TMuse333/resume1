@@ -337,32 +337,17 @@ body {
 }
 
 .carousel-container{
-  width: max-content;
+  width: 100vw;
   display: flex;
-  /* overflow-x: hidden; */
- gap: 100px;
-  position: relative;
+  overflow-x: hidden;
+ gap: 20px;
+justify-content: first baseline;
 
+
+
+ 
 
 }
-
-
- /* .carousel-container > *:nth-child(1) {
-  position: absolute; 
-  left: 50%; 
-  transform: translateX(-50%);
-}
-
-.carousel-container > *:not(:first-child) {
-  
-  position: absolute;
-  left: 0; 
-  transform: translateX(0); 
-  margin-left: calc(30px + 350px); 
-}  */
-
-
-
 
 /* .carousel-container > :nth-child(2) {
 margin-left: -10rem;
@@ -370,9 +355,7 @@ margin-left: -10rem;
 } */
 
 
-.buttons{
-  transform: translateY(-3rem);
-}
+
 
 .images-container{
   

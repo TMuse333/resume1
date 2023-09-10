@@ -337,29 +337,18 @@ body {
 }
 
 .carousel-container{
-  width: max-content;
+  width: 100vw;
   display: flex;
   /* overflow-x: hidden; */
  gap: 100px;
-  position: relative;
 
 
 }
 
 
- /* .carousel-container > *:nth-child(1) {
-  position: absolute; 
-  left: 50%; 
-  transform: translateX(-50%);
-}
-
-.carousel-container > *:not(:first-child) {
+.carousel-container > *:nth-child(1) {
   
-  position: absolute;
-  left: 0; 
-  transform: translateX(0); 
-  margin-left: calc(30px + 350px); 
-}  */
+}
 
 
 
@@ -370,9 +359,7 @@ margin-left: -10rem;
 } */
 
 
-.buttons{
-  transform: translateY(-3rem);
-}
+
 
 .images-container{
   

@@ -22,27 +22,26 @@ const ExperienceCarousel = () => {
 
   const position = (index) => ({
     position: 'absolute',
-    left: `${window.innerWidth / 2 + index * 80}px`, // Use window.innerWidth
-    transform: `translateX(-${window.innerWidth / 2}px)` // Use window.innerWidth
+    left: `calc(50% + ${index * 80}%)`, // Add 10% for each index
+    transform: 'translateX(-50%)'
   });
-  
 
 
   const customVariant = (index) => {
     if (rightClicked) {
-      const targetPositions = calculateTargetPositions();
-      const left = `calc(50% - ${targetPositions[index]}px)`;
-
+      // Animation to move the element on the right to the first element's position
       return {
         visible: {
-          left,
-          transform: 'translateX(-50%)',
+          // left: `calc(50% - ${index * 80}%)`,
+          transform: 'translateX(-15%)',
           transition: { duration: 0.5 },
-        },
+        },  
       };
     } else {
       // Default variant when not animating
-      return {};
+      return {
+       
+      };
     }
   };
   
@@ -61,26 +60,6 @@ const ExperienceCarousel = () => {
     console.log("Element positions:", positions);
   }, []);
 
-  const calculateTargetPositions = () => {
-    const targetPositions = [];
-    const numElements = experiences.length;
-  
-    for (let i = 0; i < numElements; i++) {
-      const currentIndex = i;
-      const previousIndex = (i - 1 + numElements) % numElements; // Wrap around to the last element if needed
-      const currentPosition = elementPositions[currentIndex];
-      const previousPosition = elementPositions[previousIndex];
-  
-      // Calculate the target position by finding the difference between the current and previous positions
-      const targetPosition = previousPosition - currentPosition;
-      targetPositions.push(targetPosition);
-    }
-  
-    return targetPositions;
-  };
-  
-  
-
 
 
   
@@ -98,7 +77,6 @@ const ExperienceCarousel = () => {
             custom={index}
             id={`experience-${index}`}
           >
-            {console.log("window:" +window.innerWidth)}
             <Experience
               title={experience.title}
               image={experience.image}

@@ -337,7 +337,7 @@ body {
 }
 
 .carousel-container{
-  width: max-content;
+  width: 100vw;
   display: flex;
   /* overflow-x: hidden; */
  gap: 100px;

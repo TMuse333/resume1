@@ -98,7 +98,7 @@ const ExperienceCarousel = () => {
             custom={index}
             id={`experience-${index}`}
           >
-            {console.log("window:" +window.innerWidth)}
+            {console.log}
             <Experience
               title={experience.title}
               image={experience.image}

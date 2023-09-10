@@ -22,16 +22,15 @@ const ExperienceCarousel = () => {
 
   const position = (index) => ({
     position: 'absolute',
-    left: `${window.innerWidth / 2 + index * 80}px`, // Use window.innerWidth
-    transform: `translateX(-${window.innerWidth / 2}px)` // Use window.innerWidth
+    left: `calc(50% + ${index * 80}%)`, // Add 10% for each index
+    transform: 'translateX(-50%)'
   });
-  
 
 
   const customVariant = (index) => {
     if (rightClicked) {
       const targetPositions = calculateTargetPositions();
-      const left = `calc(50% - ${targetPositions[index]}px)`;
+      const left = `calc(50% + ${targetPositions[index]}px)`;
 
       return {
         visible: {
@@ -64,21 +63,23 @@ const ExperienceCarousel = () => {
   const calculateTargetPositions = () => {
     const targetPositions = [];
     const numElements = experiences.length;
-  
+
+    // Calculate target positions based on the desired animation
     for (let i = 0; i < numElements; i++) {
-      const currentIndex = i;
-      const previousIndex = (i - 1 + numElements) % numElements; // Wrap around to the last element if needed
-      const currentPosition = elementPositions[currentIndex];
-      const previousPosition = elementPositions[previousIndex];
-  
-      // Calculate the target position by finding the difference between the current and previous positions
-      const targetPosition = previousPosition - currentPosition;
-      targetPositions.push(targetPosition);
+      if (i === 0) {
+        // First element moves to the right by the amount of the second element
+        targetPositions.push(elementPositions[1] - elementPositions[0]);
+      } else if (i === 1) {
+        // Second element moves to the right by the amount of the third element
+        targetPositions.push(elementPositions[2] - elementPositions[1]);
+      } else {
+        // Third element moves to the left by the amount of the first element
+        targetPositions.push(elementPositions[0] - elementPositions[2]);
+      }
     }
-  
+
     return targetPositions;
   };
-  
   
 
 
@@ -98,7 +99,6 @@ const ExperienceCarousel = () => {
             custom={index}
             id={`experience-${index}`}
           >
-            {console.log("window:" +window.innerWidth)}
             <Experience
               title={experience.title}
               image={experience.image}

@@ -22,16 +22,15 @@ const ExperienceCarousel = () => {
 
   const position = (index) => ({
     position: 'absolute',
-    left: `${window.innerWidth / 2 + index * 80}px`, // Use window.innerWidth
-    transform: `translateX(-${window.innerWidth / 2}px)` // Use window.innerWidth
+    left: `calc(50% + ${index * 80}%)`, // Add 10% for each index
+    transform: 'translateX(-50%)'
   });
-  
 
 
   const customVariant = (index) => {
     if (rightClicked) {
       const targetPositions = calculateTargetPositions();
-      const left = `calc(50% - ${targetPositions[index]}px)`;
+      const left = `calc(50% + ${targetPositions[index]}px)`;
 
       return {
         visible: {
@@ -98,7 +97,6 @@ const ExperienceCarousel = () => {
             custom={index}
             id={`experience-${index}`}
           >
-            {console.log("window:" +window.innerWidth)}
             <Experience
               title={experience.title}
               image={experience.image}

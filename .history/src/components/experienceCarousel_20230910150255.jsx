@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Experience from './Experience'; // Your Experience card component
 import { experiences } from './skillDesc'; // Import your experiences array
@@ -7,7 +7,6 @@ const ExperienceCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [shiftAmount, setShiftAmount] = useState(0);
   const [rightClicked, setRightClicked] = useState(false)
-  const [elementPositions, setElementPositions] = useState([]);
  
 
   const handleNext = () => {
@@ -22,29 +21,28 @@ const ExperienceCarousel = () => {
 
   const position = (index) => ({
     position: 'absolute',
-    left: `${window.innerWidth / 2 + index * 80}px`, // Use window.innerWidth
-    transform: `translateX(-${window.innerWidth / 2}px)` // Use window.innerWidth
+    left: `calc(50% + ${index * 80}%)`, // Add 10% for each index
+    transform: 'translateX(-50%)'
   });
-  
 
 
-  const customVariant = (index) => {
-    if (rightClicked) {
-      const targetPositions = calculateTargetPositions();
-      const left = `calc(50% - ${targetPositions[index]}px)`;
-
-      return {
-        visible: {
-          left,
-          transform: 'translateX(-50%)',
-          transition: { duration: 0.5 },
-        },
-      };
-    } else {
-      // Default variant when not animating
-      return {};
-    }
-  };
+  // const customVariant = (index) => {
+  //   if (rightClicked) {
+  //     // Animation to move the element on the right to the first element's position
+  //     return {
+  //       visible: {
+  //         left: `calc(50% - ${index * 80}%)`,
+  //         transform: 'translateX(-60%)',
+  //         transition: { duration: 0.5 },
+  //       },  
+  //     };
+  //   } else {
+  //     // Default variant when not animating
+  //     return {
+       
+  //     };
+  //   }
+  // };
   
 
 
@@ -58,30 +56,9 @@ const ExperienceCarousel = () => {
       }
     });
     setElementPositions(positions);
-    console.log("Element positions:", positions);
-  }, []);
+  }, [shiftAmount, rightClicked]);
 
-  const calculateTargetPositions = () => {
-    const targetPositions = [];
-    const numElements = experiences.length;
-  
-    for (let i = 0; i < numElements; i++) {
-      const currentIndex = i;
-      const previousIndex = (i - 1 + numElements) % numElements; // Wrap around to the last element if needed
-      const currentPosition = elementPositions[currentIndex];
-      const previousPosition = elementPositions[previousIndex];
-  
-      // Calculate the target position by finding the difference between the current and previous positions
-      const targetPosition = previousPosition - currentPosition;
-      targetPositions.push(targetPosition);
-    }
-  
-    return targetPositions;
-  };
-  
-  
-
-
+  const [elementPositions, setElementPositions] = useState([]);
 
   
 
@@ -93,12 +70,10 @@ const ExperienceCarousel = () => {
             key={experience.title}
             initial="hidden"
             animate={rightClicked ? 'visible' : 'hidden'}
-             variants={customVariant(index)}
+            // variants={customVariant(index)}
             style={position(index)}
             custom={index}
-            id={`experience-${index}`}
           >
-            {console.log("window:" +window.innerWidth)}
             <Experience
               title={experience.title}
               image={experience.image}
@@ -112,11 +87,6 @@ const ExperienceCarousel = () => {
         <button onClick={handlePrev}>Previous</button>
         <button onClick={handleNext}>Next</button>
       </div>
-      {/* <div className="positions">
-        {elementPositions.map((x, index) => (
-          <div key={`position-${index}`}>Element {index} X: {x}</div>
-        ))}
-      </div> */}
     </div>
   );
 };

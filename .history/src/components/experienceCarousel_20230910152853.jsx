@@ -22,7 +22,7 @@ const ExperienceCarousel = () => {
 
   const position = (index) => ({
     position: 'absolute',
-    left: `${window.innerWidth / 2 + index * 80}px`, // Use window.innerWidth
+    left: `${window.innerWidth / 4 + index * 80}px`, // Use window.innerWidth
     transform: `translateX(-${window.innerWidth / 2}px)` // Use window.innerWidth
   });
   
@@ -98,7 +98,6 @@ const ExperienceCarousel = () => {
             custom={index}
             id={`experience-${index}`}
           >
-            {console.log("window:" +window.innerWidth)}
             <Experience
               title={experience.title}
               image={experience.image}
