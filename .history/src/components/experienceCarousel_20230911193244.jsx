@@ -93,6 +93,18 @@ const ExperienceCarousel = () => {
     console.log(elements)
     
     const dimensions = getElementDimensions(elementIds);
+
+    const lastElementLeft = parseInt(elements[elements.length - 1].style.left );
+
+    const firstElementLeft = parseInt(elements[0].style.left);
+
+    const distance = lastElementLeft - firstElementLeft - 50;
+
+const x = 20
+
+console.log(distance)
+
+    
   
     for(let i=0; i <dimensions.length; i++){
 
@@ -104,19 +116,7 @@ const ExperienceCarousel = () => {
   
       const distance = lastElementLeft - firstElementLeft - 50;
 
-      elements[0].style.transform = `translateX(${distance}px)`
 
-     }
-
-     else{
-      const prevElement = parseInt(elements[i - 1].style.left );
-      const currentElement = parseInt(elements[i].style.left );
-
-      const distance = currentElement - prevElement - 50;
-
-      elements[i].style.transform = `translateX(-${distance}px)`
-
-      
      }
 
    

@@ -114,7 +114,7 @@ const ExperienceCarousel = () => {
 
       const distance = currentElement - prevElement - 50;
 
-      elements[i].style.transform = `translateX(-${distance}px)`
+      elements[i].style.transform = `translateX(${distance}px)`
 
       
      }
