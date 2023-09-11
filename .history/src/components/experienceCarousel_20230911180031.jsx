@@ -9,7 +9,7 @@ const ExperienceCarousel = () => {
   const [rightClicked, setRightClicked] = useState(false)
   const [elementPositions, setElementPositions] = useState([]);
  
-  const elementIds = ['experience-0', 'experience-1', 'experience-2']; 
+  const elementIds = ['experience-0', 'experience-1', 'experience-3']; 
 
 
   const handleNext = () => {
@@ -56,26 +56,25 @@ const ExperienceCarousel = () => {
 
 
 
-  function getElementDimensions(elementIds) {
-    const dimensions = [];
+  function getElementWidths(elementIds) {
+    const elementWidths = [];
   
     for (let i = 0; i < elementIds.length; i++) {
       const elementId = elementIds[i];
       const element = document.getElementById(elementId);
-      const rect = element.getBoundingClientRect();
   
       if (element) {
-         console.log(i + " is good")
-       
-         dimensions.push(rect);
+        const elementWidth = element.offsetWidth;
+        elementWidths.push(elementWidth);
       }
     }
   
-    return dimensions;
+    return elementWidths;
   }
   
   // Call the function to get the widths of the elements
-   // An array containing the offsetWidth of each element
+  const widths = getElementWidths(elementIds);
+  console.log("the width "+widths); // An array containing the offsetWidth of each element
 
   
   
@@ -87,28 +86,27 @@ const ExperienceCarousel = () => {
  
   
   function shiftLeft(elementIds) {
-
+   // console.log("lets get it?")
     const elements = elementIds.map((elementId) => document.getElementById(elementId));
 
     console.log(elements)
     
-    const dimensions = getElementDimensions(elementIds);
-  
-    for(let i=0; i <dimensions.length; i++){
+    const elementWidths = elements.map((element) =>
+     element.offsetWidth)
 
-      console.log(dimensions[i]);
+   // console.log(elementWidths)
 
-      elements[i].style.position = 'absolute'
+    // for(let i=0; i <elementWidths.length; i++){
 
-      if(i === 0) {
-        const lastElementLeft = parseInt(elements[elements.length - 1].style.left || '0', 10);
-      const newLeft = lastElementLeft ; // Adjust the shift amount as needed
-      elements[i].style.left = newLeft + 'px';
-      }
-      else {
-       
-      }
-    }
+    //   elements[i].style.position = 'absolute'
+
+    //   if(i === 0) {
+    //     elements[i].style.left = elements[elements.length -1].offsetWidth + 'px'
+    //   }
+    //   else {
+    //     elements[i].style.left = elements[i-1].offsetWidth + 'px'
+    //   }
+    // }
 
 
   }

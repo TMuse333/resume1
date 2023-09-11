@@ -102,7 +102,7 @@ const ExperienceCarousel = () => {
 
       if(i === 0) {
         const lastElementLeft = parseInt(elements[elements.length - 1].style.left || '0', 10);
-      const newLeft = lastElementLeft ; // Adjust the shift amount as needed
+      const newLeft = lastElementLeft + dimensions[i].width; // Adjust the shift amount as needed
       elements[i].style.left = newLeft + 'px';
       }
       else {

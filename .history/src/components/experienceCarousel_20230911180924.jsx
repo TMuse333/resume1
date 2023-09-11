@@ -87,26 +87,25 @@ const ExperienceCarousel = () => {
  
   
   function shiftLeft(elementIds) {
-
+   // console.log("lets get it?")
     const elements = elementIds.map((elementId) => document.getElementById(elementId));
 
     console.log(elements)
     
     const dimensions = getElementDimensions(elementIds);
-  
-    for(let i=0; i <dimensions.length; i++){
+    console.log(dimensions);
 
-      console.log(dimensions[i]);
+   
+
+    for(let i=0; i <dimensions.length; i++){
 
       elements[i].style.position = 'absolute'
 
       if(i === 0) {
-        const lastElementLeft = parseInt(elements[elements.length - 1].style.left || '0', 10);
-      const newLeft = lastElementLeft ; // Adjust the shift amount as needed
-      elements[i].style.left = newLeft + 'px';
+        elements[i].style.left = elements[elements.length -1].offsetWidth + 'px'
       }
       else {
-       
+        elements[i].style.left = elements[i-1].offsetWidth + 'px'
       }
     }
 

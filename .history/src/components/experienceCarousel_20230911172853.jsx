@@ -9,14 +9,13 @@ const ExperienceCarousel = () => {
   const [rightClicked, setRightClicked] = useState(false)
   const [elementPositions, setElementPositions] = useState([]);
  
-  const elementIds = ['experience-0', 'experience-1', 'experience-2']; 
+  const elementIds = ['experience-0', 'experience-1', 'experience-3']; // Replace with your actual element IDs
 
 
   const handleNext = () => {
    
     setRightClicked(true)
-   // shiftElementsToCenter('experience-0') // Increase shift amount by a fixed value (e.g., 150)
-   shiftLeft(elementIds)
+    shiftElementsToCenter(experience-0) // Increase shift amount by a fixed value (e.g., 150)
   };
 
   const handlePrev = () => {
@@ -55,60 +54,14 @@ const ExperienceCarousel = () => {
 
 
 
-
-  function getElementDimensions(elementIds) {
-    const dimensions = [];
-  
-    for (let i = 0; i < elementIds.length; i++) {
-      const elementId = elementIds[i];
-      const element = document.getElementById(elementId);
-      const rect = element.getBoundingClientRect();
-  
-      if (element) {
-         console.log(i + " is good")
-       
-         dimensions.push(rect);
-      }
-    }
-  
-    return dimensions;
-  }
-  
-  // Call the function to get the widths of the elements
-   // An array containing the offsetWidth of each element
-
-  
-  
-  
-  
-  
-
-
  
   
   function shiftLeft(elementIds) {
-
     const elements = elementIds.map((elementId) => document.getElementById(elementId));
 
-    console.log(elements)
+    const elementWidths = elements.map((element) => element.offsetWidth)
+
     
-    const dimensions = getElementDimensions(elementIds);
-  
-    for(let i=0; i <dimensions.length; i++){
-
-      console.log(dimensions[i]);
-
-      elements[i].style.position = 'absolute'
-
-      if(i === 0) {
-        const lastElementLeft = parseInt(elements[elements.length - 1].style.left || '0', 10);
-      const newLeft = lastElementLeft ; // Adjust the shift amount as needed
-      elements[i].style.left = newLeft + 'px';
-      }
-      else {
-       
-      }
-    }
 
 
   }
@@ -130,22 +83,23 @@ const ExperienceCarousel = () => {
       const secondElementHeight = secondElement.offsetHeight;
       
       // Calculate the new left position for both elements to center the second element
-      const centerLeft = (window.innerWidth - secondElementWidth) / 2;
+      const centerLeft = (window.innerWidth - (secondElementWidth + firstElementWidth)) / 2;
       
       // Calculate the new top position for both elements
       const top = (window.innerHeight - firstElementHeight) / 2;
   
       // Set the new position for the first element
       firstElement.style.position = 'absolute';
-      firstElement.style.left = -centerLeft - 150 + 'px';
+      firstElement.style.left = centerLeft + 'px'; // Adjusted to center based on both elements
       firstElement.style.top = top + 'px';
   
       // Set the new position for the second element
       secondElement.style.position = 'absolute';
-      secondElement.style.left = centerLeft + 'px';
+      secondElement.style.left = (centerLeft + firstElementWidth) + 'px'; // Adjusted to center based on both elements
       secondElement.style.top = top + 'px';
     }
   }
+  
   
  
 ;
@@ -158,7 +112,7 @@ const ExperienceCarousel = () => {
       const element = document.getElementById(`experience-${index}`);
       if (element) {
         const rect = element.getBoundingClientRect();
-     //   console.log(rect);
+        console.log(rect);
         const positionRelativeToWindow = rect.left + window.scrollX;
         positions.push(positionRelativeToWindow);
       }
@@ -184,11 +138,15 @@ const ExperienceCarousel = () => {
           <motion.div
             key={experience.title}
             initial="hidden"
+         //   animate={rightClicked ? 'visible' : 'hidden'}
+          
             custom={index}
             id={`experience-${index}`}
             style={  centerElement(`experience-${index}`, index * 350) }
-          >
+         //   variants={customVariant2(index)}
            
+          >
+            {console.log("window:" +window.innerWidth)}
             <Experience
               title={experience.title}
               image={experience.image}
