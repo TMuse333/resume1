@@ -98,17 +98,7 @@ const ExperienceCarousel = () => {
 
     const left = lastElementLeft + 'px'
 
-    console.log(lastElementLeft)
-
-    const firstElementLeft = parseInt(elements[0].style.left);
-
-const distance = lastElementLeft - firstElementLeft - 50;
-
-const x = 20
-
-console.log(distance)
-
-    elements[0].style.transform = `translateX(${distance}px)`
+    console
   
     for(let i=0; i <dimensions.length; i++){
 

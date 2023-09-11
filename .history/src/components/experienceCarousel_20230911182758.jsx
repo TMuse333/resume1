@@ -17,6 +17,8 @@ const ExperienceCarousel = () => {
     setRightClicked(true)
    // shiftElementsToCenter('experience-0') // Increase shift amount by a fixed value (e.g., 150)
    shiftLeft(elementIds)
+   shiftLeft(elementIds)
+
   };
 
   const handlePrev = () => {
@@ -93,37 +95,24 @@ const ExperienceCarousel = () => {
     console.log(elements)
     
     const dimensions = getElementDimensions(elementIds);
-
-    const lastElementLeft = parseInt(elements[elements.length - 1].style.left );
-
-    const left = lastElementLeft + 'px'
-
-    console.log(lastElementLeft)
-
-    const firstElementLeft = parseInt(elements[0].style.left);
-
-const distance = lastElementLeft - firstElementLeft - 50;
-
-const x = 20
-
-console.log(distance)
-
-    elements[0].style.transform = `translateX(${distance}px)`
   
     for(let i=0; i <dimensions.length; i++){
 
-      console.log(dimensions[i]);
+      
 
-    //  elements[i].style.position = 'absolute'
+      // elements[i].style.position = 'absolute'
 
-      // if(i === 0) {
-      //   const lastElementLeft = parseInt(elements[elements.length - 1].style.left || '0', 10);
-      // const newLeft = lastElementLeft ; 
-      // elements[i].style.left = newLeft + 'px';
-      // }
-      // else {
+      if(i === 0) {
+        const lastElementLeft = parseInt(elements[elements.length - 1].style.left || '0', 10);
+      const newLeft = lastElementLeft ;
+
+      console.log(`i=${i}, lastElementLeft=${lastElementLeft}, newLeft=${newLeft}`);
+      
+      elements[i].style.left = newLeft + 'px';
+      }
+      else {
        
-      // }
+      }
     }
 
 

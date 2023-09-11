@@ -102,7 +102,7 @@ const ExperienceCarousel = () => {
 
     const firstElementLeft = parseInt(elements[0].style.left);
 
-const distance = lastElementLeft - firstElementLeft - 50;
+const distance = lastElementLeft - firstElementLeft;
 
 const x = 20
 
