@@ -13,7 +13,7 @@ const ExperienceCarousel = () => {
   const handleNext = () => {
    
     setRightClicked(true)
-    shiftElementsToCenter('experience-0') // Increase shift amount by a fixed value (e.g., 150)
+    shiftElementsToCenter('firstElementId') // Increase shift amount by a fixed value (e.g., 150)
   };
 
   const handlePrev = () => {
@@ -98,7 +98,7 @@ const ExperienceCarousel = () => {
   
   function shiftElementsToCenter(elementId) {
     const firstElement = document.getElementById(elementId);
-    const secondElement = document.getElementById("experience-1"); // Replace with the actual ID of your second element
+    const secondElement = document.getElementById("secondElementId"); // Replace with the actual ID of your second element
     
     if (firstElement && secondElement) {
       // Get the dimensions of the first element

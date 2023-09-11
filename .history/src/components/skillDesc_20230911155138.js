@@ -25,13 +25,13 @@ export const skills = [
     image: kakashi,
     description: "this carousel will work because im the man!"
     },
-    {title: 'real one',
-     image: vegeta,
-     description: "reach your max potential!"
-    },
-    {title: 'graphics in c/c++',
-    image: majinVegeta,
-    description: "Hustlers dont stop they keep going"
-   },
+//     {title: 'real one',
+//      image: vegeta,
+//      description: "reach your max potential!"
+//     },
+//     {title: 'graphics in c/c++',
+//     image: majinVegeta,
+//     description: "Hustlers dont stop they keep going"
+//    },
 
   ]

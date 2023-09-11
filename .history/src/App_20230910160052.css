@@ -340,7 +340,7 @@ body {
   
   display: flex;
   /* overflow-x: hidden; */
-
+ gap: 100px;
 
 
 
@@ -371,7 +371,7 @@ margin-left: -10rem;
 
 
 .buttons{
-  transform: translateY(-15rem);
+  transform: translateY(-3rem);
 }
 
 .images-container{

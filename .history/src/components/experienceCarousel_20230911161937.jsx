@@ -12,8 +12,7 @@ const ExperienceCarousel = () => {
 
   const handleNext = () => {
    
-    setRightClicked(true)
-    shiftElementsToCenter('experience-0') // Increase shift amount by a fixed value (e.g., 150)
+    setRightClicked(true) // Increase shift amount by a fixed value (e.g., 150)
   };
 
   const handlePrev = () => {
@@ -96,39 +95,6 @@ const ExperienceCarousel = () => {
     }
   };
   
-  function shiftElementsToCenter(elementId) {
-    const firstElement = document.getElementById(elementId);
-    const secondElement = document.getElementById("experience-1"); // Replace with the actual ID of your second element
-    
-    if (firstElement && secondElement) {
-      // Get the dimensions of the first element
-      const firstElementWidth = firstElement.offsetWidth;
-      const firstElementHeight = firstElement.offsetHeight;
-      
-      // Get the dimensions of the second element
-      const secondElementWidth = secondElement.offsetWidth;
-      const secondElementHeight = secondElement.offsetHeight;
-      
-      // Calculate the new left position for both elements to center the second element
-      const centerLeft = (window.innerWidth - secondElementWidth) / 2;
-      
-      // Calculate the new top position for both elements
-      const top = (window.innerHeight - firstElementHeight) / 2;
-  
-      // Set the new position for the first element
-      firstElement.style.position = 'absolute';
-      firstElement.style.left = centerLeft + 'px';
-      firstElement.style.top = top + 'px';
-  
-      // Set the new position for the second element
-      secondElement.style.position = 'absolute';
-      secondElement.style.left = centerLeft + 'px';
-      secondElement.style.top = top + 'px';
-    }
-  }
-  
-  // Call the function with the ID of your first element
-  shiftElementsToCenter('firstElementId'); // Replace with the actual ID of your first element
   
   
 
@@ -169,7 +135,7 @@ const ExperienceCarousel = () => {
           
             custom={index}
             id={`experience-${index}`}
-            style={  centerElement(`experience-${index}`, index * 350) }
+            style={ centerElement(`experience-${index}`, index * 350)}
          //   variants={customVariant2(index)}
            
           >
