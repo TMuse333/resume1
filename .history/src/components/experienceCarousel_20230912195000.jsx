@@ -36,11 +36,11 @@ return elements
 
     setRightClicked(true)
 
-    // if (counter !== 0){
-    //   const shiftedArray = shiftArray(elementIds)
+    if (counter !== 0){
+      const shiftedArray = shiftArray(elementIds)
 
-    //   setElementIds(shiftedArray)
-    // }
+      setElementIds(shiftedArray)
+    }
 
    
 
@@ -129,32 +129,58 @@ return elements
    function shiftLeft(elementIds, counter) {
     const elements = elementIds.map((elementId) => document.getElementById(elementId));
   
-    console.log(elements[0].id);
+
+    console.log(elements[0].id)
+
 
     const elementPositions = elements.map((element) => {
       const rect = element.getBoundingClientRect();
-      // Calculate the element's position relative to the viewport
+     
+      
+
       const elementXRelativeToViewport = rect.left;
       // Add window.scrollX to get the position relative to the entire page
       const elementXRelativeToPage = elementXRelativeToViewport + window.scrollX;
       return elementXRelativeToPage;
     });
 
-// Move element[0] to the position of element[length-1]
-elements[0].style.left = elements[1].style.right;
+    const distance =  elementPositions[1] - elementPositions[0]
 
 
 
-
-   
   
-    // Now, elementPositions contains the positions of elements relative to window.scrollX
+    // Check if there are at least two elements in the array
+    if (elementPositions.length >= 2) {
+      // Swap the zero index element with the last element
+      const firstPosition = elementPositions[0];
+      elementPositions[0] = elementPositions[elementPositions.length - 1];
+      elementPositions[elementPositions.length - 1] = firstPosition;
+  
+
+     
+
+      // Apply the new positions to your React components using translateX
+      elements.forEach((element, index) => {
+
+        const translateValue = elementPositions[index] - element.getBoundingClientRect().left;
+          console.log(translateValue)
+
+          element.style.transform = `translateX(-${(349 + counter)+ 349}px)`;
+
+        //  if(index === 0){
+          
+        
+        //  }
+        //  else {
+        //   element.style.transform = `translateX(-${(349 + counter)+ 349}px)`;
+        // }
+
+       
+      });
+    }
+  
     console.log(elementPositions);
-  
-    
-   
   }
-  
   
   
   

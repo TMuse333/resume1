@@ -12,7 +12,7 @@ const ExperienceCarousel = () => {
   
   const [counter, setCounter] = useState(0)
 
-const initialElementIds = ['experience-0', 'experience-1', 'experience-2','experience-3','experience-4']
+const initialElementIds = ['experience-0', 'experience-1', 'experience-2']
 const [elementIds, setElementIds] = useState(initialElementIds);
 
 
@@ -36,24 +36,14 @@ return elements
 
     setRightClicked(true)
 
-    // if (counter !== 0){
-    //   const shiftedArray = shiftArray(elementIds)
-
-    //   setElementIds(shiftedArray)
-    // }
-
-   
-
-    shiftLeft(elementIds,counter)
-
-    // if(counter == 0){
-    //   shiftLeft(elementIds,counter)
-    // }
-    // else{
-    //   const shiftedElementIds = shiftArray(elementIds);
-    //   setElementIds(shiftedElementIds);
-    //   shiftLeft(elementIds,counter)
-    // }
+    if(counter == 0){
+      shiftLeft(elementIds,counter)
+    }
+    else{
+      const shiftedElementIds = shiftArray(elementIds);
+      setElementIds(shiftedElementIds);
+      shiftLeft(elementIds,counter)
+    }
 
   
 
@@ -129,8 +119,8 @@ return elements
    function shiftLeft(elementIds, counter) {
     const elements = elementIds.map((elementId) => document.getElementById(elementId));
   
-    console.log(elements[0].id);
-
+   
+    
     const elementPositions = elements.map((element) => {
       const rect = element.getBoundingClientRect();
       // Calculate the element's position relative to the viewport
@@ -139,26 +129,12 @@ return elements
       const elementXRelativeToPage = elementXRelativeToViewport + window.scrollX;
       return elementXRelativeToPage;
     });
-
-// Move element[0] to the position of element[length-1]
-elements[0].style.left = elements[1].style.right;
-
-
-
-
-   
-  
-    // Now, elementPositions contains the positions of elements relative to window.scrollX
-    console.log(elementPositions);
-  
     
+    console.log(elementPositions);
+    
+  
    
   }
-  
-  
-  
-  
-  
   
   
   
@@ -201,7 +177,7 @@ elements[0].style.left = elements[1].style.right;
       <div className="carousel-container">
         {experiences.map((experience, index) => (
           <motion.div
-          key={`experience-${index}`}
+            key={experience.title}
             initial="hidden"
             custom={index}
             id={`experience-${index}`}

@@ -36,11 +36,11 @@ return elements
 
     setRightClicked(true)
 
-    // if (counter !== 0){
-    //   const shiftedArray = shiftArray(elementIds)
+    if (counter !== 0){
+      const shiftedArray = shiftArray(elementIds)
 
-    //   setElementIds(shiftedArray)
-    // }
+      setElementIds(shiftedArray)
+    }
 
    
 
@@ -130,26 +130,6 @@ return elements
     const elements = elementIds.map((elementId) => document.getElementById(elementId));
   
     console.log(elements[0].id);
-
-    const elementPositions = elements.map((element) => {
-      const rect = element.getBoundingClientRect();
-      // Calculate the element's position relative to the viewport
-      const elementXRelativeToViewport = rect.left;
-      // Add window.scrollX to get the position relative to the entire page
-      const elementXRelativeToPage = elementXRelativeToViewport + window.scrollX;
-      return elementXRelativeToPage;
-    });
-
-// Move element[0] to the position of element[length-1]
-elements[0].style.left = elements[1].style.right;
-
-
-
-
-   
-  
-    // Now, elementPositions contains the positions of elements relative to window.scrollX
-    console.log(elementPositions);
   
     
    

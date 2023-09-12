@@ -1,4 +1,4 @@
-import React, { useState,useEffect,useLayoutEffect,useRef } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Experience from './Experience'; // Your Experience card component
 import { experiences } from './skillDesc'; // Import your experiences array
@@ -6,84 +6,46 @@ import { experiences } from './skillDesc'; // Import your experiences array
 const ExperienceCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [shiftAmount, setShiftAmount] = useState(0);
-  const [rightClicked, setRightClicked] = useState(false)
+  const [rightClicked, setRightClicked] = useState(false);
   const [elementPositions, setElementPositions] = useState([]);
- 
-  
-  const [counter, setCounter] = useState(0)
+  const [counter, setCounter] = useState(0);
 
-const initialElementIds = ['experience-0', 'experience-1', 'experience-2','experience-3','experience-4']
-const [elementIds, setElementIds] = useState(initialElementIds);
+  const initialElementIds = ['experience-0', 'experience-1', 'experience-2', 'experience-3', 'experience-4'];
+  const [elementIds, setElementIds] = useState(initialElementIds);
 
-
-const shiftArray = (elements) => {
-
-
-
-let firstElement = elements[0];
-for (let i = 0; i < elements.length - 1; i++) {
-  elements[i] = elements[i + 1];
-}
-elements[elements.length - 1] = firstElement;
-
-
-
-return elements
-
-}
+  const shiftArray = (elements) => {
+    let firstElement = elements[0];
+    for (let i = 0; i < elements.length - 1; i++) {
+      elements[i] = elements[i + 1];
+    }
+    elements[elements.length - 1] = firstElement;
+    return elements;
+  };
 
   const handleNext = () => {
+    setRightClicked(true);
 
-    setRightClicked(true)
+    if (counter !== 0) {
+      const shiftedArray = shiftArray(elementIds);
+      setElementIds(shiftedArray);
+    }
 
-    // if (counter !== 0){
-    //   const shiftedArray = shiftArray(elementIds)
-
-    //   setElementIds(shiftedArray)
-    // }
-
-   
-
-    shiftLeft(elementIds,counter)
-
-    // if(counter == 0){
-    //   shiftLeft(elementIds,counter)
-    // }
-    // else{
-    //   const shiftedElementIds = shiftArray(elementIds);
-    //   setElementIds(shiftedElementIds);
-    //   shiftLeft(elementIds,counter)
-    // }
-
-  
-
-    
-   setCounter(counter + 1);
+    shiftLeft(elementIds, counter);
+    setCounter(counter + 1);
   };
 
   const handlePrev = () => {
-  
-    setLeftClicked(true) // Decrease shift amount by a fixed value (e.g., 150)
+    // Handle previous button click
   };
-
-
-  
-
-
-
-  
- 
-
-
 
   const centerElement = (elementId, offset) => {
     const element = document.getElementById(elementId);
     if (element) {
       const width = element.offsetWidth;
       const height = element.offsetHeight;
-      const left = (window.innerWidth - width) / 2+ offset;
-      const top = (window.innerHeight - height) / 2 ; // Apply the offset to the top position
-  
+      const left = (window.innerWidth - width) / 2 + offset;
+      const top = (window.innerHeight - height) / 2; // Apply the offset to the top position
+
       return {
         position: 'absolute',
         left: left + 'px',
@@ -93,44 +55,29 @@ return elements
     return {}; // Return an empty style object if the element is not found
   };
 
-
-
-
   function getElementDimensions(elementIds) {
     const dimensions = [];
-  
+
     for (let i = 0; i < elementIds.length; i++) {
       const elementId = elementIds[i];
       const element = document.getElementById(elementId);
       const rect = element.getBoundingClientRect();
-  
+
       if (element) {
-       
-       
-         dimensions.push(rect);
+        dimensions.push(rect);
       }
     }
-  
+
     return dimensions;
   }
-  
+
   // Call the function to get the widths of the elements
-   // An array containing the offsetWidth of each element
+  // An array containing the offsetWidth of each element
 
-  
-  
-  
-  
-  
-
-
- 
-  
-   function shiftLeft(elementIds, counter) {
+  function shiftLeft(elementIds, counter) {
     const elements = elementIds.map((elementId) => document.getElementById(elementId));
-  
-    console.log(elements[0].id);
 
+    // Calculate the positions of elements relative to window.scrollX
     const elementPositions = elements.map((element) => {
       const rect = element.getBoundingClientRect();
       // Calculate the element's position relative to the viewport
@@ -140,36 +87,14 @@ return elements
       return elementXRelativeToPage;
     });
 
-// Move element[0] to the position of element[length-1]
-elements[0].style.left = elements[1].style.right;
+    // Animate elements to their positions
+    const elementPositionsArray = elementPositions.map((position) => ({
+      x: position, // Set the x-coordinate for the animation
+      opacity: 1, // You can set other animation properties as well
+    }));
 
-
-
-
-   
-  
-    // Now, elementPositions contains the positions of elements relative to window.scrollX
-    console.log(elementPositions);
-  
-    
-   
+    // Rest of the code
   }
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-
-  
- 
-;
-  
-
 
   useLayoutEffect(() => {
     const positions = [];
@@ -177,37 +102,29 @@ elements[0].style.left = elements[1].style.right;
       const element = document.getElementById(`experience-${index}`);
       if (element) {
         const rect = element.getBoundingClientRect();
-     //   console.log(rect);
         const positionRelativeToWindow = rect.left + window.scrollX;
         positions.push(positionRelativeToWindow);
       }
     });
     setElementPositions(positions);
-  
+
     // Delay the logging of positions
-  // Add a 100ms delay (adjust as needed)
+    // Add a 100ms delay (adjust as needed)
   }, []);
-
-
-  
-  
-
-
- 
-  
 
   return (
     <div className='container'>
       <div className="carousel-container">
         {experiences.map((experience, index) => (
           <motion.div
-          key={`experience-${index}`}
-            initial="hidden"
+            key={`experience-${index}`}
+            initial={{ x: 0, opacity: 1 }} // Initial position and opacity
+            animate={elementPositionsArray[index]} // Animate to the desired position
+            transition={{ duration: 0.5 }}
             custom={index}
             id={`experience-${index}`}
-            style={  centerElement(`experience-${index}`, index * 350) }
+            style={centerElement(`experience-${index}`, index * 350)}
           >
-           
             <Experience
               title={experience.title}
               image={experience.image}
@@ -221,11 +138,6 @@ elements[0].style.left = elements[1].style.right;
         <button onClick={handlePrev}>Previous</button>
         <button onClick={handleNext}>Next</button>
       </div>
-      {/* <div className="positions">
-        {elementPositions.map((x, index) => (
-          <div key={`position-${index}`}>Element {index} X: {x}</div>
-        ))}
-      </div> */}
     </div>
   );
 };

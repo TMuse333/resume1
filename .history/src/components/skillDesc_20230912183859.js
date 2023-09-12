@@ -41,7 +41,7 @@ export const skills = [
   },
   {title: 'perseverance',
   image: obito,
-  description: "Make it happen with physics"
+  description: "Make it happen with p"
 }
 
   ]

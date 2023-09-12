@@ -36,11 +36,11 @@ return elements
 
     setRightClicked(true)
 
-    // if (counter !== 0){
-    //   const shiftedArray = shiftArray(elementIds)
+    if (counter !== 0){
+      const shiftedArray = shiftArray(elementIds)
 
-    //   setElementIds(shiftedArray)
-    // }
+      setElementIds(shiftedArray)
+    }
 
    
 
@@ -141,7 +141,7 @@ return elements
     });
 
 // Move element[0] to the position of element[length-1]
-elements[0].style.left = elements[1].style.right;
+elements[0].style.left = elements[1].style.left;
 
 
 

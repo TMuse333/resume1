@@ -36,11 +36,11 @@ return elements
 
     setRightClicked(true)
 
-    // if (counter !== 0){
-    //   const shiftedArray = shiftArray(elementIds)
+    if (counter !== 0){
+      const shiftedArray = shiftArray(elementIds)
 
-    //   setElementIds(shiftedArray)
-    // }
+      setElementIds(shiftedArray)
+    }
 
    
 
@@ -141,9 +141,13 @@ return elements
     });
 
 // Move element[0] to the position of element[length-1]
-elements[0].style.left = elements[1].style.right;
+elements[0].style.left = elements[elements.length - 1].style.left;
 
-
+// Now, loop through the other elements to shift them
+for (let i = elements.length - 1; i >= 1; i--) {
+  // Set the left position of the current element to the left position of the previous element
+  elements[i].style.left = elements[i - 1].style.left;
+}
 
 
    

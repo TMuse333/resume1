@@ -36,11 +36,11 @@ return elements
 
     setRightClicked(true)
 
-    // if (counter !== 0){
-    //   const shiftedArray = shiftArray(elementIds)
+    if (counter !== 0){
+      const shiftedArray = shiftArray(elementIds)
 
-    //   setElementIds(shiftedArray)
-    // }
+      setElementIds(shiftedArray)
+    }
 
    
 

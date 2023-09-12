@@ -1,8 +1,7 @@
 import vegeta from '../images/vegeta-battle.png';
 import majinVegeta from '../images/majin-vegeta.png'
 import kakashi from '../images/kakashi-susanoo.jpg'
-import abu from '../images/abu.png'
-import obito from '../images/war_obito.jpg'
+import abu from '../images/aboubacar-4.00.png'
 
 export const skills = [
     { name: 'Competent in multiple forms of front end development including react, next and angular',
@@ -35,13 +34,9 @@ export const skills = [
     image: majinVegeta,
     description: "Hustlers dont stop they keep going"
    },
-   {title: 'perseverance',
-    image: abu,
-    description: "If it was easy everyone would do it"
-  },
-  {title: 'perseverance',
-  image: obito,
-  description: "Make it happen with physics"
-}
+   {title: 'graphics in c/c++',
+    image: majinVegeta,
+    description: "Hustlers dont stop they keep going"
+  }
 
   ]
