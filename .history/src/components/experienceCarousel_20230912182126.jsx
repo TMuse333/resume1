@@ -95,7 +95,7 @@ return elements
       const rect = element.getBoundingClientRect();
   
       if (element) {
-       
+         console.log(i + " is good")
        
          dimensions.push(rect);
       }
@@ -119,7 +119,7 @@ return elements
    function shiftLeft(elementIds, counter) {
     const elements = elementIds.map((elementId) => document.getElementById(elementId));
   
-   
+    console.log("before shifting: ", elements);
 
     console.log(elements[0].id)
   
@@ -132,15 +132,15 @@ return elements
   
     for (let i = 0; i < dimensions.length; i++) {
       if (i === 0) {
-        elements[i].style.transform = `translateX(${699}px)`;
+        elements[i].style.transform = `translateX(${distance}px)`;
         const rect = elements[i].getBoundingClientRect();
         const xPosRelativeToScreen = rect.left + window.scrollX;
-        console.log(`Moving element ${elements[i].id} by ${699}px. X position relative to screen: ${xPosRelativeToScreen}px`);
+        console.log(`Moving element ${elements[i].id} by ${distance}px. X position relative to screen: ${xPosRelativeToScreen}px`);
       } else {
-        elements[i].style.transform = `translateX(-${349}px)`;
+        elements[i].style.transform = `translateX(-${distance2}px)`;
         const rect = elements[i].getBoundingClientRect();
         const xPosRelativeToScreen = rect.left + window.scrollX;
-        console.log(`Moving element ${elements[i].id} by ${-349}px. X position relative to screen: ${xPosRelativeToScreen}px`);
+        console.log(`Moving element ${elements[i].id} by ${distance2}px. X position relative to screen: ${xPosRelativeToScreen}px`);
       }
     }
 

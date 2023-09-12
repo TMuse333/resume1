@@ -132,15 +132,15 @@ return elements
   
     for (let i = 0; i < dimensions.length; i++) {
       if (i === 0) {
-        elements[i].style.transform = `translateX(${699}px)`;
+        elements[i].style.transform = `translateX(${64}px)`;
         const rect = elements[i].getBoundingClientRect();
         const xPosRelativeToScreen = rect.left + window.scrollX;
-        console.log(`Moving element ${elements[i].id} by ${699}px. X position relative to screen: ${xPosRelativeToScreen}px`);
+      //  console.log(`Moving element ${elements[i].id} by ${distance}px. X position relative to screen: ${xPosRelativeToScreen}px`);
       } else {
-        elements[i].style.transform = `translateX(-${349}px)`;
+        elements[i].style.transform = `translateX(-${distance2}px)`;
         const rect = elements[i].getBoundingClientRect();
         const xPosRelativeToScreen = rect.left + window.scrollX;
-        console.log(`Moving element ${elements[i].id} by ${-349}px. X position relative to screen: ${xPosRelativeToScreen}px`);
+        console.log(`Moving element ${elements[i].id} by ${distance2}px. X position relative to screen: ${xPosRelativeToScreen}px`);
       }
     }
 

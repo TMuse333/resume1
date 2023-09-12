@@ -12,42 +12,15 @@ const ExperienceCarousel = () => {
   
   const [counter, setCounter] = useState(0)
 
-const initialElementIds = ['experience-0', 'experience-1', 'experience-2']
-const [elementIds, setElementIds] = useState(initialElementIds);
-
-
-const shiftArray = (elements) => {
-
-
-
-let firstElement = elements[0];
-for (let i = 0; i < elements.length - 1; i++) {
-  elements[i] = elements[i + 1];
-}
-elements[elements.length - 1] = firstElement;
-
-
-
-return elements
-
-}
+let elementIds = ['experience-0', 'experience-1', 'experience-2']
 
   const handleNext = () => {
 
     setRightClicked(true)
+  elementIds = shiftLeft(elementIds, counter);
 
-    if(counter == 0){
-      shiftLeft(elementIds,counter)
-    }
-    else{
-      const shiftedElementIds = shiftArray(elementIds);
-      setElementIds(shiftedElementIds);
-      shiftLeft(elementIds,counter)
-    }
+    console.log("In the rightShift func",elementIds)
 
-  
-
-    
    setCounter(counter + 1);
   };
 
@@ -95,7 +68,7 @@ return elements
       const rect = element.getBoundingClientRect();
   
       if (element) {
-       
+         console.log(i + " is good")
        
          dimensions.push(rect);
       }
@@ -119,7 +92,7 @@ return elements
    function shiftLeft(elementIds, counter) {
     const elements = elementIds.map((elementId) => document.getElementById(elementId));
   
-   
+    console.log("before shifting: ", elements);
 
     console.log(elements[0].id)
   
@@ -132,23 +105,31 @@ return elements
   
     for (let i = 0; i < dimensions.length; i++) {
       if (i === 0) {
-        elements[i].style.transform = `translateX(${699}px)`;
+        elements[i].style.transform = `translateX(${distance}px)`;
         const rect = elements[i].getBoundingClientRect();
         const xPosRelativeToScreen = rect.left + window.scrollX;
-        console.log(`Moving element ${elements[i].id} by ${699}px. X position relative to screen: ${xPosRelativeToScreen}px`);
+        console.log(`Moving element ${elements[i].id} by ${distance}px. X position relative to screen: ${xPosRelativeToScreen}px`);
       } else {
-        elements[i].style.transform = `translateX(-${349}px)`;
+        elements[i].style.transform = `translateX(-${distance2}px)`;
         const rect = elements[i].getBoundingClientRect();
         const xPosRelativeToScreen = rect.left + window.scrollX;
-        console.log(`Moving element ${elements[i].id} by ${-349}px. X position relative to screen: ${xPosRelativeToScreen}px`);
+        console.log(`Moving element ${elements[i].id} by ${distance2}px. X position relative to screen: ${xPosRelativeToScreen}px`);
       }
     }
-
-    
   
-   
+    const shiftedElements = elements.map((element, index) => {
+      const newIndex = (index + 1) % elements.length; // Calculate the new index
+      return elements[newIndex]; // Assign the element to the new index
+    });
   
-   
+    // Replace the original elements array with the shiftedElements array
+    elements.splice(0, elements.length, ...shiftedElements);
+  
+    console.log("Elements after shifting:", elements);
+  
+    const shiftedElementIds = elements.map((element) => element.id);
+  
+    return shiftedElementIds;
   }
   
   

@@ -9,46 +9,17 @@ const ExperienceCarousel = () => {
   const [rightClicked, setRightClicked] = useState(false)
   const [elementPositions, setElementPositions] = useState([]);
  
-  
-  const [counter, setCounter] = useState(0)
-
-const initialElementIds = ['experience-0', 'experience-1', 'experience-2']
-const [elementIds, setElementIds] = useState(initialElementIds);
+  const elementIds = ['experience-0', 'experience-1', 'experience-2']; 
 
 
-const shiftArray = (elements) => {
-
-
-
-let firstElement = elements[0];
-for (let i = 0; i < elements.length - 1; i++) {
-  elements[i] = elements[i + 1];
-}
-elements[elements.length - 1] = firstElement;
-
-
-
-return elements
-
-}
+let distance = 0;
 
   const handleNext = () => {
-
+   let counter = 0;
     setRightClicked(true)
-
-    if(counter == 0){
-      shiftLeft(elementIds,counter)
-    }
-    else{
-      const shiftedElementIds = shiftArray(elementIds);
-      setElementIds(shiftedElementIds);
-      shiftLeft(elementIds,counter)
-    }
-
-  
-
-    
-   setCounter(counter + 1);
+   // shiftElementsToCenter('experience-0') // Increase shift amount by a fixed value (e.g., 150)
+   shiftLeft(elementIds,distance)
+ distance ++
   };
 
   const handlePrev = () => {
@@ -56,7 +27,9 @@ return elements
     setLeftClicked(true) // Decrease shift amount by a fixed value (e.g., 150)
   };
 
-
+  const position = (index) => ({
+   
+  });
   
 
 
@@ -95,7 +68,7 @@ return elements
       const rect = element.getBoundingClientRect();
   
       if (element) {
-       
+         console.log(i + " is good")
        
          dimensions.push(rect);
       }
@@ -116,41 +89,64 @@ return elements
 
  
   
-   function shiftLeft(elementIds, counter) {
-    const elements = elementIds.map((elementId) => document.getElementById(elementId));
-  
-   
+  function shiftLeft(elementIds,distance) {
 
-    console.log(elements[0].id)
-  
-    const dimensions = getElementDimensions(elementIds);
-  
-    const lastElementLeft = parseInt(elements[elements.length - 1].style.left);
-    const firstElementLeft = parseInt(elements[0].style.left);
-    const distance = lastElementLeft - firstElementLeft - 50;
-    const distance2 = (distance / 2) * counter + distance / 2;
-  
-    for (let i = 0; i < dimensions.length; i++) {
-      if (i === 0) {
-        elements[i].style.transform = `translateX(${699}px)`;
-        const rect = elements[i].getBoundingClientRect();
-        const xPosRelativeToScreen = rect.left + window.scrollX;
-        console.log(`Moving element ${elements[i].id} by ${699}px. X position relative to screen: ${xPosRelativeToScreen}px`);
-      } else {
-        elements[i].style.transform = `translateX(-${349}px)`;
-        const rect = elements[i].getBoundingClientRect();
-        const xPosRelativeToScreen = rect.left + window.scrollX;
-        console.log(`Moving element ${elements[i].id} by ${-349}px. X position relative to screen: ${xPosRelativeToScreen}px`);
-      }
-    }
+    const elements = elementIds.map((elementId) => document.getElementById(elementId));
 
     
+    
+    const dimensions = getElementDimensions(elementIds);
+
+    let shift = (distance * 100) + 100
+
+    const firstElementLeft = parseInt(elements[0].style.left);
+
+    const firstElementLeft = parseInt(elements[0].style.left);
+
+
   
-   
+    for(let i=0; i <dimensions.length; i++){
+
+    //  elements[i].style.transform = `translateX(-${shift}px)`
+
+     if(i === 0){
+
+      const lastElementLeft = parseInt(elements[elements.length - 1].style.left );
+
+      
   
+      const distance = lastElementLeft - firstElementLeft - 50;
+
+      elements[0].style.transform = `translateX(${distance}px)`
+
+     }
+
+    //  else{
+    //   const prevElement = parseInt(elements[i - 1].style.left );
+    //   const currentElement = parseInt(elements[i].style.left );
+
+    //   const distance = currentElement - prevElement - 50;
+
+    //   elements[i].style.transform = `translateX(-50px)`
+
+      
+    //  }
+
    
+    }
+
+
+// Shift each element by -1
+const shiftedElements = elements.map((element, index) => {
+  const newIndex = (index + 1) % elements.length; // Calculate the new index
+  return elements[newIndex]; // Assign the element to the new index
+});
+
+// Replace the original elements array with the shiftedElements array
+elements.splice(0, elements.length, ...shiftedElements);
+        
+
   }
-  
   
   
 

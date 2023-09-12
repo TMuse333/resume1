@@ -9,46 +9,14 @@ const ExperienceCarousel = () => {
   const [rightClicked, setRightClicked] = useState(false)
   const [elementPositions, setElementPositions] = useState([]);
  
-  
-  const [counter, setCounter] = useState(0)
+  const elementIds = ['experience-0', 'experience-1', 'experience-2']; 
 
-const initialElementIds = ['experience-0', 'experience-1', 'experience-2']
-const [elementIds, setElementIds] = useState(initialElementIds);
-
-
-const shiftArray = (elements) => {
-
-
-
-let firstElement = elements[0];
-for (let i = 0; i < elements.length - 1; i++) {
-  elements[i] = elements[i + 1];
-}
-elements[elements.length - 1] = firstElement;
-
-
-
-return elements
-
-}
 
   const handleNext = () => {
-
+   
     setRightClicked(true)
-
-    if(counter == 0){
-      shiftLeft(elementIds,counter)
-    }
-    else{
-      const shiftedElementIds = shiftArray(elementIds);
-      setElementIds(shiftedElementIds);
-      shiftLeft(elementIds,counter)
-    }
-
-  
-
-    
-   setCounter(counter + 1);
+   // shiftElementsToCenter('experience-0') // Increase shift amount by a fixed value (e.g., 150)
+   shiftLeft(elementIds)
   };
 
   const handlePrev = () => {
@@ -56,7 +24,9 @@ return elements
     setLeftClicked(true) // Decrease shift amount by a fixed value (e.g., 150)
   };
 
-
+  const position = (index) => ({
+   
+  });
   
 
 
@@ -95,7 +65,7 @@ return elements
       const rect = element.getBoundingClientRect();
   
       if (element) {
-       
+         console.log(i + " is good")
        
          dimensions.push(rect);
       }
@@ -116,46 +86,70 @@ return elements
 
  
   
-   function shiftLeft(elementIds, counter) {
-    const elements = elementIds.map((elementId) => document.getElementById(elementId));
-  
-   
+// Define an initial transform for each element
+const initialTransforms = elementIds.map(() => 0);
 
-    console.log(elements[0].id)
-  
-    const dimensions = getElementDimensions(elementIds);
-  
-    const lastElementLeft = parseInt(elements[elements.length - 1].style.left);
-    const firstElementLeft = parseInt(elements[0].style.left);
-    const distance = lastElementLeft - firstElementLeft - 50;
-    const distance2 = (distance / 2) * counter + distance / 2;
-  
-    for (let i = 0; i < dimensions.length; i++) {
-      if (i === 0) {
-        elements[i].style.transform = `translateX(${699}px)`;
-        const rect = elements[i].getBoundingClientRect();
-        const xPosRelativeToScreen = rect.left + window.scrollX;
-        console.log(`Moving element ${elements[i].id} by ${699}px. X position relative to screen: ${xPosRelativeToScreen}px`);
-      } else {
-        elements[i].style.transform = `translateX(-${349}px)`;
-        const rect = elements[i].getBoundingClientRect();
-        const xPosRelativeToScreen = rect.left + window.scrollX;
-        console.log(`Moving element ${elements[i].id} by ${-349}px. X position relative to screen: ${xPosRelativeToScreen}px`);
-      }
+function shiftLeft(elementIds) {
+  const elements = elementIds.map((elementId) => document.getElementById(elementId));
+  const dimensions = getElementDimensions(elementIds);
+
+  for (let i = 0; i < dimensions.length; i++) {
+    if (i === 0) {
+      const lastElementLeft = parseInt(elements[elements.length - 1].style.left);
+      const firstElementLeft = parseInt(elements[0].style.left);
+      const distance = lastElementLeft - firstElementLeft - 50;
+
+      // Calculate the new transform value and accumulate it
+      initialTransforms[i] += distance;
+
+      elements[i].style.transform = `translateX(${initialTransforms[i]}px)`;
+    } else {
+      const prevElement = parseInt(elements[i - 1].style.left);
+      const currentElement = parseInt(elements[i].style.left);
+      const distance = currentElement - prevElement - 50;
+
+      // Calculate the new transform value and accumulate it
+      initialTransforms[i] += -distance;
+
+      elements[i].style.transform = `translateX(${initialTransforms[i]}px)`;
     }
-
-    
-  
-   
-  
-   
   }
-  
+}
+
   
   
 
   
-
+  function shiftElementsToCenter(elementId) {
+    const firstElement = document.getElementById(elementId);
+    const secondElement = document.getElementById("experience-1"); // Replace with the actual ID of your second element
+    
+    if (firstElement && secondElement) {
+      // Get the dimensions of the first element
+      const firstElementWidth = firstElement.offsetWidth;
+      const firstElementHeight = firstElement.offsetHeight;
+      
+      // Get the dimensions of the second element
+      const secondElementWidth = secondElement.offsetWidth;
+      const secondElementHeight = secondElement.offsetHeight;
+      
+      // Calculate the new left position for both elements to center the second element
+      const centerLeft = (window.innerWidth - secondElementWidth) / 2;
+      
+      // Calculate the new top position for both elements
+      const top = (window.innerHeight - firstElementHeight) / 2;
+  
+      // Set the new position for the first element
+      firstElement.style.position = 'absolute';
+      firstElement.style.left = -centerLeft - 150 + 'px';
+      firstElement.style.top = top + 'px';
+  
+      // Set the new position for the second element
+      secondElement.style.position = 'absolute';
+      secondElement.style.left = centerLeft + 'px';
+      secondElement.style.top = top + 'px';
+    }
+  }
   
  
 ;
