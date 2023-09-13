@@ -78,9 +78,8 @@ const ExperienceCarousel = () => {
 
 
     if (direction === "left"){
-     
+      distance -=  350
       setCounter(counter - 1)
-      distance -= (350 * counter-1) + 350
      
       console.log("clicking left changed the distance to distance",distance)
     }

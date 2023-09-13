@@ -16,7 +16,7 @@ const ExperienceCarousel = () => {
  shift(elementIds,counter,'right')
 
    setCounter(counter+1)
-   console.log("counter after right shift",counter+1)
+   console.log("counter after right shift",counter)
   };
 
   const handlePrev = () => {
@@ -24,7 +24,7 @@ const ExperienceCarousel = () => {
    
 
     setCounter( shift(elementIds,counter,'left'))
-    console.log("counter after left shift",counter-1)
+    c
   
    
   };
@@ -78,10 +78,9 @@ const ExperienceCarousel = () => {
 
 
     if (direction === "left"){
-     
-      setCounter(counter - 1)
       distance -= (350 * counter-1) + 350
-     
+      setCounter(counter - 1)
+      console.log("the counter after left shift is",counter)
       console.log("clicking left changed the distance to distance",distance)
     }
 

@@ -5,28 +5,24 @@ import { experiences } from './skillDesc'; // Import your experiences array
 
 const ExperienceCarousel = () => {
   
+  const [rightClicked, setRightClicked] = useState(false)
+  const [elementPositions, setElementPositions] = useState([]);
   const [counter, setCounter] = useState(0)
-  const elementIds = ['experience-0', 'experience-1', 'experience-2','experience-3','experience-4',]; 
-  const [elementPositions,setElementPositions] = useState([])
+  const elementIds = ['experience-0', 'experience-1', 'experience-2','experience-3','experience-4','experience-5']; 
+
 
   const handleNext = () => {
    
-
+    setRightClicked(true)
   
- shift(elementIds,counter,'right')
+   shift(elementIds,counter)
 
    setCounter(counter+1)
-   console.log("counter after right shift",counter+1)
   };
 
   const handlePrev = () => {
-
-   
-
-    setCounter( shift(elementIds,counter,'left'))
-    console.log("counter after left shift",counter-1)
   
-   
+    setLeftClicked(true) // Decrease shift amount by a fixed value (e.g., 150)
   };
 
   const centerElement = (elementId, offset) => {
@@ -65,36 +61,15 @@ const ExperienceCarousel = () => {
 
 
 
-  function shift(elementIds,counter,direction){
+  function shift(elementIds,counter){
     const elements = elementIds.map((elementId) => document.getElementById(elementId));
 
     console.log(elements)
 
-    let distance =  (350 * counter) + 350
-
-   console.log("counter entering the function is",counter)
-   
-    console.log("the whole distance is",distance)
-
-
-    if (direction === "left"){
-     
-      setCounter(counter - 1)
-      distance -= (350 * counter-1) + 350
-     
-      console.log("clicking left changed the distance to distance",distance)
-    }
-
-
-
     for(let i=0; i <elementIds.length; i++){
 
-      elements[i].style.transform = `translateX(-${distance}px)`;
-      console.log("total shift is",distance)
-     
+      elements[i].style.transform = `translateX(${(50 * counter) -50}px)`
     }
-
-    return counter;
   }
 
   return (

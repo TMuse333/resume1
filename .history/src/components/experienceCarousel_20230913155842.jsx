@@ -13,18 +13,16 @@ const ExperienceCarousel = () => {
    
 
   
- shift(elementIds,counter,'right')
+   shift(elementIds,counter,'right')
 
    setCounter(counter+1)
-   console.log("counter after right shift",counter+1)
   };
 
   const handlePrev = () => {
 
-   
+    shift(elementIds,counter,'left')
 
-    setCounter( shift(elementIds,counter,'left'))
-    console.log("counter after left shift",counter-1)
+    setCounter(counter+1)
   
    
   };
@@ -65,37 +63,35 @@ const ExperienceCarousel = () => {
 
 
 
-  function shift(elementIds,counter,direction){
+  function shift(elementIds, counter, direction) {
     const elements = elementIds.map((elementId) => document.getElementById(elementId));
-
-    console.log(elements)
-
-    let distance =  (350 * counter) + 350
-
-   console.log("counter entering the function is",counter)
-   
-    console.log("the whole distance is",distance)
-
-
-    if (direction === "left"){
-     
-      setCounter(counter - 1)
-      distance -= (350 * counter-1) + 350
-     
-      console.log("clicking left changed the distance to distance",distance)
+  
+    const distance = 350; // The base distance for each shift
+  
+    if (direction === "right") {
+      // Calculate the total distance to shift to the right
+      const totalDistance = distance * counter;
+      
+      for (let i = 0; i < elementIds.length; i++) {
+        elements[i].style.transform = `translateX(-${totalDistance}px)`;
+      }
+    } else if (direction === "left") {
+      if (counter > 0) {
+        // Calculate the total distance to shift to the left
+        const totalDistance = distance * (counter - 1);
+  
+        for (let i = 0; i < elementIds.length; i++) {
+          elements[i].style.transform = `translateX(-${totalDistance}px)`;
+        }
+      } else {
+        // If counter is already 0, reset to original positions
+        for (let i = 0; i < elementIds.length; i++) {
+          elements[i].style.transform = "translateX(0)";
+        }
+      }
     }
-
-
-
-    for(let i=0; i <elementIds.length; i++){
-
-      elements[i].style.transform = `translateX(-${distance}px)`;
-      console.log("total shift is",distance)
-     
-    }
-
-    return counter;
   }
+  
 
   return (
     <div className='container'>

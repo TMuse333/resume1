@@ -13,18 +13,16 @@ const ExperienceCarousel = () => {
    
 
   
- shift(elementIds,counter,'right')
+   shift(elementIds,counter,'right')
 
    setCounter(counter+1)
-   console.log("counter after right shift",counter+1)
   };
 
   const handlePrev = () => {
 
-   
+    shift(elementIds,counter,'left')
 
-    setCounter( shift(elementIds,counter,'left'))
-    console.log("counter after left shift",counter-1)
+    setCounter(counter+1)
   
    
   };
@@ -70,31 +68,26 @@ const ExperienceCarousel = () => {
 
     console.log(elements)
 
-    let distance =  (350 * counter) + 350
-
-   console.log("counter entering the function is",counter)
-   
-    console.log("the whole distance is",distance)
+    const distance = (350 * counter) + 350
+    console.log(distance)
 
 
-    if (direction === "left"){
-     
-      setCounter(counter - 1)
-      distance -= (350 * counter-1) + 350
-     
-      console.log("clicking left changed the distance to distance",distance)
-    }
+    
 
 
 
     for(let i=0; i <elementIds.length; i++){
 
-      elements[i].style.transform = `translateX(-${distance}px)`;
-      console.log("total shift is",distance)
+      if(direction === 'right'){
+        elements[i].style.transform = `translateX(-${distance}px)`
+      }
+
+      else{
+        elements[i].style.transform = `translateX(${distance}px)`
+      }
+
      
     }
-
-    return counter;
   }
 
   return (
