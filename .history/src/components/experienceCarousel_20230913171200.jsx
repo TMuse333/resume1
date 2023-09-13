@@ -127,13 +127,11 @@ console.log("counter before right shift",counter)
             custom={index}
             id={`experience-${index}`}
             style={{
-              // Apply absolute positioning to all elements
-              position: "absolute",
-              left: index === 0 ? "50%" : `calc(50% + ${index * 350}px)`,
-              transform: index === 0 ? "translateX(-50%)" : "none",
+              // Use conditional styles to center the first element
+              marginLeft: index === 0 ? "auto" : "350px",
             }}
           >
-          
+          >
            
             <Experience
               title={experience.title}

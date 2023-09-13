@@ -15,11 +15,9 @@ console.log("counter before right shift",counter)
   
  shift(elementIds,counter,'right')
 
- if(counter < elementIds.length-1){
-  setCounter(counter+1)
- }
+ if(counter >=)
 
-  
+   setCounter(counter+1)
    console.log("counter after right shift",counter+1)
   };
 
@@ -51,7 +49,21 @@ console.log("counter before right shift",counter)
   };
 
 
-
+  useLayoutEffect(() => {
+    const positions = [];
+    experiences.forEach((_, index) => {
+      const element = document.getElementById(`experience-${index}`);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+    
+        const positionRelativeToWindow = rect.left + window.scrollX;
+        positions.push(positionRelativeToWindow);
+      }
+    });
+    setElementPositions(positions);
+  
+    
+  }, []);
 
 
 
@@ -63,7 +75,7 @@ console.log("counter before right shift",counter)
     let distance =  (350 * counter) + 350
 
     if(distance > 1400){
-      distance = 1400
+      counter = 170
     }
 
 
@@ -96,13 +108,11 @@ console.log("counter before right shift",counter)
         distance= 1400
       }
 
-      if(counter !== 1){
-        setCounter(counter-1)
-      }
+      setCounter(counter-1)
 
+      //((350 * counter-1) + 350)
      
-
-     
+     // console.log("clicking left changed the distance to distance",distance)
     
     }
 
@@ -123,17 +133,11 @@ console.log("counter before right shift",counter)
         {experiences.map((experience, index) => (
           <motion.div
             key={`experience-${index}`}
-           
+            initial="hidden"
             custom={index}
             id={`experience-${index}`}
-            style={{
-              // Apply absolute positioning to all elements
-              position: "absolute",
-              left: index === 0 ? "50%" : `calc(50% + ${index * 350}px)`,
-              transform: index === 0 ? "translateX(-50%)" : "none",
-            }}
+            style={  centerElement(`experience-${index}`, index * 350) }
           >
-          
            
             <Experience
               title={experience.title}
