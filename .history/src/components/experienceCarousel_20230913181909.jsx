@@ -33,27 +33,50 @@ const ExperienceCarousel = () => {
   
   
 
-  const handlePrev = async () => {
-    if (!isTransitioning && currentImageIndex > 0) {
-      setIsTransitioning(true);
-  
-      // Slide out to the left with opacity 0 (adjust the duration as needed)
-      await experienceControl.start({ x: '-130%',  transition: { duration: 0.2 } });
-  
-      await experienceControl.start({opacity: 0})
-      setCurrentImageIndex(currentImageIndex - 1);
-  
-      // Slide to the left with opacity 0 (adjust the duration as needed)
-      await experienceControl.start({ x: '100%', opacity: 0, transition: { duration: 0.2 } });
-  
-      // Slide back to the original position with opacity 1 (adjust the duration as needed)
-      await experienceControl.start({ x: '0%', opacity: 1, transition: { duration: 0.2 } });
-     
-  
-      setIsTransitioning(false);
-    }
-  };
 
+//  // experienceControl.set({ opacity: 0 });
+
+      // setTimeout(() => {
+      //   experienceControl.set({ transition: { duration: 0.3 }, opacity: 1 });
+      // }, 1000);
+
+      const handleTransition = async (direction) => {
+        if (!isTransitioning) {
+          setIsTransitioning(true);
+      
+          let startX, endX;
+          let opacity = 0;
+      
+          if (direction === 'next' && currentImageIndex < experiences.length - 1) {
+            startX = '130%';
+            endX = '0%';
+            opacity = 0;
+            setCurrentImageIndex(currentImageIndex + 1);
+          } else if (direction === 'prev' && currentImageIndex > 0) {
+            startX = '-130%';
+            endX = '0%';
+            opacity = 0;
+            setCurrentImageIndex(currentImageIndex - 1);
+          }
+      
+          // Slide out to the specified direction with opacity 0
+          await experienceControl.start({ x: startX, opacity, transition: { duration: 0.2 } });
+      
+          // Slide back to the original position with opacity 1
+          await experienceControl.start({ x: endX, opacity: 1, transition: { duration: 0.2 } });
+      
+          setIsTransitioning(false);
+        }
+      };
+      
+      const handleNext = () => {
+      
+      };
+      
+      const handlePrev = () => {
+        handleTransition('prev');
+      };
+      
 
   return (
     <div className="carousel-container">

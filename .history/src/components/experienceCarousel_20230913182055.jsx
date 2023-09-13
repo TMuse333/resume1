@@ -55,6 +55,18 @@ const ExperienceCarousel = () => {
   };
 
 
+
+
+  const handlePrev2 = async () => {
+    if (!isTransitioning && currentImageIndex > 0) {
+      setIsTransitioning(true);
+      await experienceControl.start({ x: '-100%' }); // Slide out to the right
+      setCurrentImageIndex(currentImageIndex - 1);
+      await experienceControl.start({ x: '0%' }); // Slide in from the left
+      setIsTransitioning(false);
+    }
+  };
+
   return (
     <div className="carousel-container">
       <button onClick={handlePrev} disabled={currentImageIndex === 0 || isTransitioning}>

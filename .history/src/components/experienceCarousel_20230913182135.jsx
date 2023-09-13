@@ -55,6 +55,10 @@ const ExperienceCarousel = () => {
   };
 
 
+
+
+
+
   return (
     <div className="carousel-container">
       <button onClick={handlePrev} disabled={currentImageIndex === 0 || isTransitioning}>
