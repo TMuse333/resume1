@@ -13,32 +13,22 @@ const ExperienceCarousel = () => {
   const handleNext = async () => {
     if (!isTransitioning && currentImageIndex < experiences.length - 1) {
       setIsTransitioning(true);
-  
-      // Slide out to the left with opacity 0 (adjust the duration as needed)
-      await experienceControl.start({ x: '130%',  transition: { duration: 0.2 } });
-  
-      await experienceControl.start({opacity: 0})
+      await experienceControl.start({ x: '130%' }); // Slide out to the left
       setCurrentImageIndex(currentImageIndex + 1);
-  
-      // Slide to the left with opacity 0 (adjust the duration as needed)
-      await experienceControl.start({ x: '-100%', opacity: 0, transition: { duration: 0.2 } });
-  
-      // Slide back to the original position with opacity 1 (adjust the duration as needed)
-      await experienceControl.start({ x: '0%', opacity: 1, transition: { duration: 0.2 } });
+
+      experienceControl.set({ opacity: 0 });
+
+      setTimeout(() => {
+        experienceControl.set({ transition: { duration: 0.3 }, opacity: 1 });
+      }, 1000);
+
+      await experienceControl.start({ x: '-100%' });
+
      
-  
-      setIsTransitioning(false);
+     
+     setIsTransitioning(false);
     }
   };
-  
-  
-
-
-//  // experienceControl.set({ opacity: 0 });
-
-      // setTimeout(() => {
-      //   experienceControl.set({ transition: { duration: 0.3 }, opacity: 1 });
-      // }, 1000);
 
   const handlePrev = async () => {
     if (!isTransitioning && currentImageIndex > 0) {
