@@ -4,7 +4,7 @@ import vegeta from '../images/vegeta-battle.png';
 
 const About = () => {
   const style = {
-    height: '300px',
+    height: '400px',
   };
 
   const containerVariants = {
@@ -68,8 +68,8 @@ const About = () => {
     >
       <motion.div className="title"
        variants={textVariants}>
-        <motion.h2>Thomas Musial</motion.h2>
-        <motion.p>Web developer, graphic designer.</motion.p>
+        <motion.h1>Thomas Musial</motion.h1>
+        <motion.h2>Web developer, graphic designer.</motion.h2>
       </motion.div>
       <motion.img
         style={style}
@@ -78,12 +78,9 @@ const About = () => {
         variants={imageVariants}
       />
       <motion.div className="about" variants={aboutTextVariants}>
-        <motion.h2>About me</motion.h2>
+        <motion.h1>What I do</motion.h1>
         <motion.p>
-          I am a very disciplined individual who is very focused on trying to
-          be as competent and capable as can be across any human endeavor along
-          with being the best creator I can be. Below are some examples of such
-          endeavors.
+        Welcome to a world where websites come alive with captivating visuals and seamless interactivity. Our expertise in Blender and C++ allows us to craft immersive web environments, dynamic graphics, and interactive experiences that set your brand apart. Explore the fusion of artistry and technology, and transform your online presence today.
         </motion.p>
       </motion.div>
     </motion.div>

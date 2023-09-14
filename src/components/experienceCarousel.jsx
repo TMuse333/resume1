@@ -60,7 +60,7 @@ const ExperienceCarousel = () => {
   return (
 
     <div className='carousel'>
-           <h1>Skills</h1>
+           <h1>Projects and services</h1>
     <div className="carousel-container">
   
       

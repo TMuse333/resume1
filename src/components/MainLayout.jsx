@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import About from './about';
 import Skills from './skills';
 import Screensaver from './ScreenSaver';
+import ContactForm from './contact';
 
 import ExperienceCarousel from './experienceCarousel';
 
@@ -13,8 +14,9 @@ function MainLayout({ children }) {
    <>
    <Navbar/>
    <About/>
-   <Skills/>
     <ExperienceCarousel/>
+    <Skills/>
+    <ContactForm/>
     </>
  
  
