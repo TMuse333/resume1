@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 
-
+import gokuVsJiren from '../images/goku-vs-jiren.jpg'
+import instagram from '../images/ig-logo.png'
 import youtube from '../images/youtube-logo.png'
-
+import ImageCarousel from './imageCarousel';
+import SimpleImageCarousel from './simpleImageCarousel';
 import profilePicture from '../images/ig-profile.jpg'
 const ContactForm = () => {
   const [formData, setFormData] = useState({

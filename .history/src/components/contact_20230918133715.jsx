@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-
+import gokuVsJiren from '../images/goku-vs-jiren.jpg'
+import instagram from '../images/ig-logo.png'
 import youtube from '../images/youtube-logo.png'
 
 import profilePicture from '../images/ig-profile.jpg'
