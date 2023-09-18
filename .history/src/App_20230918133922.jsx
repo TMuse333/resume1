@@ -11,7 +11,7 @@ import {
 
 
 import MainLayout from './components/MainLayout';
-
+import OtherPage from './components/otherPage';
 import { SkillProvider } from './context/context'
 import FAQ from './components/FAQ';
 
