@@ -15,11 +15,12 @@ const ExperienceCarousel = () => {
 
   const handleNext = async () => {
 
+    console.log("button clicked niq")
     if (!isTransitioning && currentImageIndex < experiences.length - 1) {
       setIsTransitioning(true);
     
       // Slide out to the left with opacity 0 (adjust the duration as needed)
-      await experienceControl.start({ x: '110%',  transition: { duration: 0.2 } });
+      await experienceControl.start({ x: '150%',  transition: { duration: 0.2 } });
       setCurrentImageIndex(currentImageIndex + 1);
       await experienceControl.start({opacity: 0})
      
@@ -42,8 +43,8 @@ const ExperienceCarousel = () => {
       setIsTransitioning(true);
   
       // Slide out to the left with opacity 0 (adjust the duration as needed)
-      await experienceControl.start({ x: '-95%',  transition: { duration: 0.2 } });
-      setCurrentImageIndex(currentImageIndex - 1);
+      await experienceControl.start({ x: '-170%',  transition: { duration: 0.2 } });
+  
       await experienceControl.start({opacity: 0})
      
   

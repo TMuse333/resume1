@@ -15,6 +15,7 @@ const ExperienceCarousel = () => {
 
   const handleNext = async () => {
 
+    console.log("button clicked niq")
     if (!isTransitioning && currentImageIndex < experiences.length - 1) {
       setIsTransitioning(true);
     
