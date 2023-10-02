@@ -26,7 +26,7 @@ const ExperienceCarousel = () => {
       setCurrentImageIndex(currentImageIndex + 1);
   
       // Slide to the left with opacity 0 (adjust the duration as needed)
-      await experienceControl.start({ x: '-100%', opacity: 0, transition: { duration: 0.2 } });
+      await experienceControl.start({ x: '-100%', opacity: 0, transition: { duration: 0.01 } });
   
       // Slide back to the original position with opacity 1 (adjust the duration as needed)
       await experienceControl.start({ x: '0%', opacity: 1, transition: { duration: 0.2 } });
@@ -49,7 +49,7 @@ const ExperienceCarousel = () => {
       setCurrentImageIndex(currentImageIndex - 1);
   
       // Slide to the left with opacity 0 (adjust the duration as needed)
-      await experienceControl.start({ x: '100%', opacity: 0, transition: { duration: 0.2 } });
+      await experienceControl.start({ x: '100%', opacity: 0, transition: { duration: 0.01 } });
   
       // Slide back to the original position with opacity 1 (adjust the duration as needed)
       await experienceControl.start({ x: '0%', opacity: 1, transition: { duration: 0.2 } });
@@ -60,37 +60,37 @@ const ExperienceCarousel = () => {
   };
 
 
-  // const handleNext = async () => {
-  //   if (!isTransitioning && currentImageIndex < experiences.length - 1) {
-  //     setIsTransitioning(true);
+  const handleNext = async () => {
+    if (!isTransitioning && currentImageIndex < experiences.length - 1) {
+      setIsTransitioning(true);
   
-  //     // Slide out to the left with opacity 0, and change the duration for a quicker transition
-  //     await experienceControl.start({ x: '150%', opacity: 0, transition: { duration: 0.5 } });
+      // Slide out to the left with opacity 0, and change the duration for a quicker transition
+      await experienceControl.start({ x: '150%', opacity: 0, transition: { duration: 0.5 } });
   
-  //     setCurrentImageIndex(currentImageIndex + 1);
+      setCurrentImageIndex(currentImageIndex + 1);
   
-  //     // Immediately reset the animation properties and opacity
-  //     experienceControl.set({ x: '0%', opacity: 1 });
+      // Immediately reset the animation properties and opacity
+      experienceControl.set({ x: '0%', opacity: 1 });
   
-  //     setIsTransitioning(false);
-  //   }
-  // };
+      setIsTransitioning(false);
+    }
+  };
   
-  // const handlePrev = async () => {
-  //   if (!isTransitioning && currentImageIndex > 0) {
-  //     setIsTransitioning(true);
+  const handlePrev = async () => {
+    if (!isTransitioning && currentImageIndex > 0) {
+      setIsTransitioning(true);
   
-  //     // Slide out to the right with opacity 0, and change the duration for a quicker transition
-  //     await experienceControl.start({ x: '-170%', opacity: 0, transition: { duration: 0.5 } });
+      // Slide out to the right with opacity 0, and change the duration for a quicker transition
+      await experienceControl.start({ x: '-170%', opacity: 0, transition: { duration: 0.5 } });
   
-  //     setCurrentImageIndex(currentImageIndex - 1);
+      setCurrentImageIndex(currentImageIndex - 1);
   
-  //     // Immediately reset the animation properties and opacity
-  //     experienceControl.set({ x: '0%', opacity: 1 });
+      // Immediately reset the animation properties and opacity
+      experienceControl.set({ x: '0%', opacity: 1 });
   
-  //     setIsTransitioning(false);
-  //   }
-  // };
+      setIsTransitioning(false);
+    }
+  };
   
 
 

@@ -26,7 +26,7 @@ const ExperienceCarousel = () => {
       setCurrentImageIndex(currentImageIndex + 1);
   
       // Slide to the left with opacity 0 (adjust the duration as needed)
-      await experienceControl.start({ x: '-100%', opacity: 0, transition: { duration: 0.2 } });
+      await experienceControl.start({ x: '-100%', opacity: 0, transition: { duration: 0.01 } });
   
       // Slide back to the original position with opacity 1 (adjust the duration as needed)
       await experienceControl.start({ x: '0%', opacity: 1, transition: { duration: 0.2 } });
