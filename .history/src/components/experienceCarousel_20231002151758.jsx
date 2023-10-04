@@ -19,7 +19,7 @@ const ExperienceCarousel = () => {
       setIsTransitioning(true);
     
       // Slide out to the left with opacity 0 (adjust the duration as needed)
-      await experienceControl.start({ x: '90%',  transition: { duration: 0.2 } });
+      await experienceControl.start({ x: '15%',  transition: { duration: 0.2 } });
       setCurrentImageIndex(currentImageIndex + 1);
       await experienceControl.start({opacity: 0})
      

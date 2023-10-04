@@ -5,7 +5,7 @@ import Skills from './skills';
 
 import ContactForm from './contact';
 import Footer from './footer';
-import Carousel from './carousel';
+import Ca
 
 
 
@@ -19,8 +19,7 @@ function MainLayout({ children }) {
    <Navbar/>
    <About/>
    <Skills/>
-  <Carousel/>
-    {/* <ExperienceCarousel/> */}
+    <ExperienceCarousel/>
     <ContactForm/>
     <Footer/>
     </>
