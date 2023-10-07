@@ -327,18 +327,7 @@ height: 500px; */
 .exp-carousel{
   background: linear-gradient(to right, #F4A460, #FF8C00);
   display: flex;
-  width: 100vw;
 }
-
-.exp-carousel button{
-  height:40px;
-  
-  margin-top: auto;
-  margin-bottom: auto;
-  
-}
-
-
 
 .carousel-container{
   margin-top: 50px;

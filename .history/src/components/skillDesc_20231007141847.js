@@ -20,7 +20,7 @@ export const experiences = [
   {
     title: 'Gym progress',
     description: 'Since the age of 13, I have been dedicated to building a strong body through weight training. '+
-    'This has given me a high work capacity and how to deal with stress and work through it, which Im sure is an important skill for sales',
+    'This has given me a high work capacity and how to dea',
     image: muscle,
     height:'430px',
     width:'200px'

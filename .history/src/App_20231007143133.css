@@ -332,9 +332,8 @@ height: 500px; */
 
 .exp-carousel button{
   height:40px;
+  justify-content: center;
   
-  margin-top: auto;
-  margin-bottom: auto;
   
 }
 

@@ -19,7 +19,7 @@ function MainLayout({ children }) {
    <Navbar/>
    <About/>
    <Skills/>
-  {/* <Carousel/> */}
+  <Carousel/>
     <ExperienceCarousel/>
     <ContactForm/>
     <Footer/>
