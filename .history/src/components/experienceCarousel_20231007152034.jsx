@@ -87,10 +87,10 @@ const ExperienceCarousel = () => {
           image={experiences[currentImageIndex].image}
           description={experiences[currentImageIndex].description}
         />
-        {/* <Link 
+        <Link 
         to="/progress"
         onClick={()=>handleCarouselClick(currentImageIndex)}>
-          View all progress</Link> */}
+          View all progress</Link>
       </motion.div>
 
       <button 

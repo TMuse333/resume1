@@ -56,8 +56,8 @@ const Skills = () => {
   };
 
   const skillStyles = (index) => ({
-    // boxShadow: isHovered === index ? '0 0 100px rgba(10, 128, 0, 1)' : null,
-    backgroundColor: isHovered === index ? 'rgba(255, 165, 0, 1)' : 'transparent',
+    boxShadow: isHovered === index ? '0 0 100px rgba(10, 128, 0, 1)' : null,
+    backgroundColor: isHovered === index ? 'rgba(144, 238, 144, 1)' : 'transparent',
   
     transform: isHovered === index ? 'scale(1.2)' : 'scale(1)',
     padding: '10px',

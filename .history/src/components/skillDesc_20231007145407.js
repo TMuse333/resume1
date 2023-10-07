@@ -22,15 +22,13 @@ export const experiences = [
     description: 'Since the age of 13, I have been dedicated to building a strong body through weight training. '+
     'This has given me a high work capacity and how to deal with stress and work through it, which Im sure is an important skill for sales',
     image: muscle,
-   
     
   },
   {
     title: 'Drawing progress',
     description: 'Ever since I was a young boy, I have been into drawing, it taught me how to really focus on a particular object and copy it detail for detail '+
-    'I am sure I will be able to apply the focus and attention to detail into a sales career! Im sure it will also translate into creating useful and unique advertisements!',
+    'I am sure I will be able to apply the focus and attention to detail into a sales career',
     image: vegeta,
-
    
   },
   {
@@ -39,7 +37,8 @@ export const experiences = [
     "which took a lot more effort and planning than regular bodybuilding. "+
     "I will take the same structured approach to learning the art of sales!",
     image: dunk,
-  
+    height:'430px',
+    width:'200px'
   },
 
 

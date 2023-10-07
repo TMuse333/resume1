@@ -26,7 +26,7 @@ function App() {
       
       <Route path='/' element={<MainLayout/>}/>
      <Route path="/FAQ" element={<FAQ/>}/>
-     <Route path="/progress" element={<Progress/>}/>
+     <Route path="/progress" element={<Progress/>}
       </Routes>
       </SkillProvider>
 

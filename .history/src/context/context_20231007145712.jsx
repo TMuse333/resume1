@@ -2,20 +2,21 @@
 
 import React, { createContext, useContext, useState } from 'react';
 
-// Create the SkillContext
 const SkillContext = createContext();
 
-// Create a custom hook for accessing the SkillContext
 export function useSkillContext() {
   return useContext(SkillContext);
 }
 
-// Create the SkillProvider component
 export function SkillProvider({ children }) {
   const [selectedSkillIndex, setSelectedSkillIndex] = useState(null);
 
+  const handleSelectSkill = (index) => {
+    setSelectedSkillIndex(index);
+  };
+
   return (
-    <SkillContext.Provider value={{ selectedSkillIndex, setSelectedSkillIndex }}>
+    <SkillContext.Provider value={{ selectedSkillIndex, handleSelectSkill }}>
       {children}
     </SkillContext.Provider>
   );

@@ -60,11 +60,13 @@ const ExperienceCarousel = () => {
     }
   };
 
+  
 
-  const handleCarouselClick = (index) =>{
-    handleSelectSkill(index)
-    console.log("the index is",index)
-  }
+
+
+  
+
+
 
 
   return (
@@ -86,11 +88,10 @@ const ExperienceCarousel = () => {
           title={experiences[currentImageIndex].title}
           image={experiences[currentImageIndex].image}
           description={experiences[currentImageIndex].description}
+          // height={experiences[currentImageIndex].height}
+          // width={experiences[currentImageIndex].width}
         />
-        {/* <Link 
-        to="/progress"
-        onClick={()=>handleCarouselClick(currentImageIndex)}>
-          View all progress</Link> */}
+        <Link to="/progress">View all progress</Link>
       </motion.div>
 
       <button 

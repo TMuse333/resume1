@@ -28,7 +28,7 @@ export const experiences = [
   {
     title: 'Drawing progress',
     description: 'Ever since I was a young boy, I have been into drawing, it taught me how to really focus on a particular object and copy it detail for detail '+
-    'I am sure I will be able to apply the focus and attention to detail into a sales career! Im sure it will also translate into creating useful and unique advertisements!',
+    'I am sure I will be able to apply the focus and attention to detail into a sales career! Im sure it will also transla',
     image: vegeta,
 
    

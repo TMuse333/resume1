@@ -60,11 +60,43 @@ const ExperienceCarousel = () => {
     }
   };
 
+  
 
-  const handleCarouselClick = (index) =>{
-    handleSelectSkill(index)
-    console.log("the index is",index)
-  }
+
+
+  //   if (!isTransitioning && currentImageIndex < experiences.length - 1) {
+  //     setIsTransitioning(true);
+  
+  //     // Slide out to the left with opacity 0, and change the duration for a quicker transition
+  //     await experienceControl.start({ x: '150%', opacity: 0, transition: { duration: 0.5 } });
+  
+  //     setCurrentImageIndex(currentImageIndex + 1);
+  
+  //     // Immediately reset the animation properties and opacity
+  //     experienceControl.set({ x: '0%', opacity: 1 });
+  
+  //     setIsTransitioning(false);
+  //   }
+  // };
+  
+  // const handlePrev = async () => {
+  //   if (!isTransitioning && currentImageIndex > 0) {
+  //     setIsTransitioning(true);
+  
+  //     // Slide out to the right with opacity 0, and change the duration for a quicker transition
+  //     await experienceControl.start({ x: '-170%', opacity: 0, transition: { duration: 0.5 } });
+  
+  //     setCurrentImageIndex(currentImageIndex - 1);
+  
+  //     // Immediately reset the animation properties and opacity
+  //     experienceControl.set({ x: '0%', opacity: 1 });
+  
+  //     setIsTransitioning(false);
+  //   }
+  // };
+  
+
+
 
 
   return (
@@ -86,11 +118,10 @@ const ExperienceCarousel = () => {
           title={experiences[currentImageIndex].title}
           image={experiences[currentImageIndex].image}
           description={experiences[currentImageIndex].description}
+          // height={experiences[currentImageIndex].height}
+          // width={experiences[currentImageIndex].width}
         />
-        {/* <Link 
-        to="/progress"
-        onClick={()=>handleCarouselClick(currentImageIndex)}>
-          View all progress</Link> */}
+        <Link to="/progress">View all progress</Link>
       </motion.div>
 
       <button 
