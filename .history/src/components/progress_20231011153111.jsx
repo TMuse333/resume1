@@ -1,0 +1,65 @@
+import React, { useState, useEffect } from 'react';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import { progress } from './skillDesc';
+import { useSkillContext } from '../context/context';
+
+
+const Progress = () => {
+const { handleSelectSkill } = useSkillContext(); 
+const photos = progress.images // Replace with your array of image sources
+const [centeredImageIndex, setCenteredImageIndex] = useState(null);
+
+useEffect(() => {
+    // Calculate the center of the screen
+    const screenCenter = window.innerWidth / 2;
+
+    // Listen for scroll events
+    const handleScroll = () => {
+      const imageElements = document.querySelectorAll('.progress-images img');
+
+      // Loop through image elements to find the one in the center
+      imageElements.forEach((image, index) => {
+        const imageCenter = image.offsetLeft + image.width / 2;
+
+        // Check if the image is in the center of the screen
+        if (imageCenter >= screenCenter) {
+          setCenteredImageIndex(index);
+          console.log("center nation")
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
+return (
+    <div className='progress-container'>
+      
+      <div className='progress-images'>
+
+      {progress[0].images.map((image, index) => (
+        <img 
+          key={index}
+          src={image}
+          style={{ height: '300px',
+        width:'180px',
+        marginRight:'3rem',
+        transform: index === centeredImageIndex ? 'scale(1.2)' : 'scale(1)'
+              
+    }}
+        />
+      ))}
+      </div>
+      </div>
+   
+  );
+
+      }
+  
+
+export default Progress;
