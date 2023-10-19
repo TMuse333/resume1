@@ -218,7 +218,7 @@ export const progress = [
 export const attributes = [
   {
     name: 'High energy and strong physical presence',
-    description:`My unwavering dedication to a lifelong regimen of rigorous physical training has not only endowed me with boundless energy but has also cultivated a very strong physical presence. I firmly believe that these attributes will serve as invaluable assets in the realm of sales, enhancing my ability to make a strong and enduring impression on clients and to be able to give a high performance day after day without running out of energy.`,
+    description:``,
     background:TMuse
   },
   {

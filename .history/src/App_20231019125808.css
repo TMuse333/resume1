@@ -208,17 +208,17 @@ padding: 0;
 
 
 .attribute-container{
+
+  
   border:3px solid black;
   margin-top:3rem;
+  /* background-image:url('images/be-about-it.png'); */
   background-size: 300px 600px;
   background-repeat: no-repeat;
   height:600px;
+  
   background-position: center;
   overflow: hidden;
-  border: 3px solid white;
-width: fit-content;
-margin-left: auto;
-margin-right: auto;
 
 
 
@@ -608,7 +608,7 @@ flex-direction: column;
 
 @media screen and (min-width: 415px) {
   .skills-container{
-   
+    /* grid-template-columns: 200px 200px ; */
   }
   
 }
@@ -649,10 +649,6 @@ flex-direction: column;
   
   .list-container{
 
-  }
-
-  .attribute-container{
-   
   }
 
   .social-media{
@@ -709,29 +705,9 @@ flex-direction: column;
   }
 
   .skills-container{
-   
-    
-      display: flex;
-      /* grid-template-columns: repeat(2, minmax(clamp(50vw, 50vw, 300px), 1fr));
-      grid-template-rows: repeat(4, auto);  */
-    flex-wrap: wrap;
-    gap:20px;
-    width:80vw;
-    max-width: 1000px;;
-
- 
-  
-      justify-items: center; 
-      justify-content: center;
-      margin-left: auto;
-      margin-right: auto;
-
-    
-  }
-
-  .attribute-container{
-   background-size:350px 700px;
-   height: 700px;
+    width:100vw;
+    display: grid;
+    /* grid-template-columns: 200px 200px 200px 200px; */
   }
 
   .skills-section{

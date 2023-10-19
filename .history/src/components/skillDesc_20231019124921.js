@@ -218,17 +218,22 @@ export const progress = [
 export const attributes = [
   {
     name: 'High energy and strong physical presence',
-    description:`My unwavering dedication to a lifelong regimen of rigorous physical training has not only endowed me with boundless energy but has also cultivated a very strong physical presence. I firmly believe that these attributes will serve as invaluable assets in the realm of sales, enhancing my ability to make a strong and enduring impression on clients and to be able to give a high performance day after day without running out of energy.`,
+    description:'I have been committed to rigorous physical training my whole life, '+
+    'this has given me lots of energy and a strong physical presence which Im sure will '+
+    'help me in sales',
     background:TMuse
   },
   {
     name:'Excels in creativity visual communication',
-    description:`I have a track record of producing numerous captivating highlight reel videos and maintaining an extensive portfolio of intricately designed characters, a testament to my creative prowess. My innate ability to generate innovative ideas positions me as an ideal candidate for crafting compelling advertisements, particularly for automotive sales. I am confident that my creativity and experience will translate into a suite of exceptional and impactful advertising materials, setting a new standard for excellence among sales professionals.`,
+    description:'I have made multiple highlight reel videos and have an extensive art '+
+    'collection of characters that I have drawn, Ive always been great at coming up with ideas.'+
+    'I will be able to make great advertisements for cars!',
     background:abuFlex
   },
   {
     name:'Very tenacious person',
-    description:`In all my pursuits, whether it's been competitive basketball, bodybuilding, art, or any other endeavor, I've consistently striven for excellence. I'm dedicated to optimizing my approach, ensuring substantial progress, and staying the course until success is achieved. This unwavering commitment to improvement is the driving force behind my readiness to excel in the field of sales, where I'm prepared to be a top-performing asset for your dealership.`,
+    description:`In every endeavor I've undertaken, I've consistently demonstrated an unwavering commitment to excellence. Whether it's been my decade-long tenure as a competitive basketball player, my pursuit of bodybuilding and vertical jump training, my passion for the arts, or any other venture I've embraced, my approach remains the same. I'm dedicated to continuously seeking out the most effective methods for improvement, yielding remarkable progress while persisting until the task is accomplished. This same drive and dedication will undoubtedly propel me to excel in the world of sales, where I'm poised to become a top-performing asset at the dealership.
+    `
     background:dunk2
   },
   {

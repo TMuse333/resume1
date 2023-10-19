@@ -712,12 +712,12 @@ flex-direction: column;
    
     
       display: flex;
-      /* grid-template-columns: repeat(2, minmax(clamp(50vw, 50vw, 300px), 1fr));
-      grid-template-rows: repeat(4, auto);  */
+      grid-template-columns: repeat(2, minmax(clamp(50vw, 50vw, 300px), 1fr));
+      grid-template-rows: repeat(4, auto); 
     flex-wrap: wrap;
     gap:20px;
     width:80vw;
-    max-width: 1000px;;
+    max-width: 21;
 
  
   

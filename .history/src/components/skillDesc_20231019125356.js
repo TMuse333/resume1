@@ -218,12 +218,14 @@ export const progress = [
 export const attributes = [
   {
     name: 'High energy and strong physical presence',
-    description:`My unwavering dedication to a lifelong regimen of rigorous physical training has not only endowed me with boundless energy but has also cultivated a very strong physical presence. I firmly believe that these attributes will serve as invaluable assets in the realm of sales, enhancing my ability to make a strong and enduring impression on clients and to be able to give a high performance day after day without running out of energy.`,
+    description:'I have been committed to rigorous physical training my whole life, '+
+    'this has given me lots of energy and a strong physical presence which Im sure will '+
+    'help me in sales',
     background:TMuse
   },
   {
     name:'Excels in creativity visual communication',
-    description:`I have a track record of producing numerous captivating highlight reel videos and maintaining an extensive portfolio of intricately designed characters, a testament to my creative prowess. My innate ability to generate innovative ideas positions me as an ideal candidate for crafting compelling advertisements, particularly for automotive sales. I am confident that my creativity and experience will translate into a suite of exceptional and impactful advertising materials, setting a new standard for excellence among sales professionals.`,
+    description:``,
     background:abuFlex
   },
   {
