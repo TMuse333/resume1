@@ -1,6 +1,6 @@
 import campaign from '../images/campaign-2021.jpg'
 import signs from '../images/campaign-2.jpg'
-import React from 'react'
+import re
 
 const Campaign = () =>{
 
@@ -10,9 +10,6 @@ const Campaign = () =>{
         <div className='campaign-container'>
             <div>
             <h1>Experience</h1>
-
-            <h2>Led door-knocking team, securing largest margin win for Nova Scotia's premier.
-            </h2>
 
    
   <p className='campaign-description'>In August of 2021, I was one of the lead campaign managers for Iain Rankin, the premier of Nova Scotia for the 2021 general election.

@@ -605,7 +605,7 @@ flex-direction: column;
 
 .progress-description{
   width:100vw;
-
+ 
   text-align: center;
 }
 
@@ -620,36 +620,13 @@ flex-direction: column;
   text-align: center;
 }
 
-.campaign-container h1{
-  background: linear-gradient(45deg, var(--color-3), var(--color-4));
-  color: rgb(255, 255, 255);
-  border-radius: 10px;
-  padding:15px;
-  font-family: 'Montserrat', sans-serif;
-
-  width:min-content;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.campaign-description{
-  padding-right: 20px;
-  padding-left: 20px;
-}
-
-.campaign-container p{
-  font-weight:600;
-}
-
 .campaign-container img{
   margin-left: auto;
   margin-right: auto;
-  border:2px solid white;
 }
 .campaign-roles li{
   padding-right:20px;
-  margin-top: 1rem;
-  font-weight:600;
+  line
 
 }
 
@@ -659,32 +636,6 @@ flex-direction: column;
 
 .campaign-learned ul{
   list-style-type: none;
-}
-
-.campaign-learned li{
-  padding-right:20px;
-  margin-top: 1rem;
-  font-weight:600;
-}
-
-.dal-container{
-  background-color: var(--background-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width:100vw;
-  text-align: center;
-}
-
-.dal-container img{
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.dal-container p{
-  padding-left: 30px;
-  padding-right: 30px;
-
 }
 
 
@@ -813,8 +764,8 @@ flex-direction: column;
   }
 
   .attribute-container{
-   background-size:400px 800px;
-   height: 800px;
+   background-size:350px 700px;
+   height: 700px;
   }
 
   .skills-section{

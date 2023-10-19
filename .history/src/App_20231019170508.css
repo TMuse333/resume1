@@ -623,10 +623,9 @@ flex-direction: column;
 .campaign-container h1{
   background: linear-gradient(45deg, var(--color-3), var(--color-4));
   color: rgb(255, 255, 255);
-  border-radius: 10px;
-  padding:15px;
-  font-family: 'Montserrat', sans-serif;
 
+  padding:5px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   width:min-content;
   margin-left: auto;
   margin-right: auto;

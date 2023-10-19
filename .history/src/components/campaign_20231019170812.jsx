@@ -11,7 +11,9 @@ const Campaign = () =>{
             <div>
             <h1>Experience</h1>
 
-            <h2>Led door-knocking team, securing largest margin win for Nova Scotia's premier.
+            <h2>Leading the premier of Nova Scotias door knocking
+                team during the 2021 election, helping him
+                win his riding by the largest margin in Nova Scotia
             </h2>
 
    
