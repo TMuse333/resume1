@@ -11,9 +11,10 @@ import {
 
 
 import MainLayout from './components/MainLayout';
-import OtherPage from './components/otherPage';
+
 import { SkillProvider } from './context/context'
-import FAQ from './components/FAQ';
+
+
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
    <Routes>
       
       <Route path='/' element={<MainLayout/>}/>
-     <Route path="/FAQ" element={<FAQ/>}/>
+    
       </Routes>
       </SkillProvider>
 
