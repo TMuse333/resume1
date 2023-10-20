@@ -44,7 +44,7 @@ const About = () => {
         }}
         id="about"
       >
-        <motion.h1>Want a great salesman to train? Look no further.</motion.h1>
+        <motion.h1>Want an ambitious and hard working young man  Look no further.</motion.h1>
         <motion.p>
           Hello, I'm Thomas Musial, a 20-year-old aspiring salesman with a strong foundation for success. A decade of competitive basketball, rigorous strength training, and two years of computer science at Dalhousie along with a relentless work ethic have prepared me to be an exceptional salesman ready to make you money.
         </motion.p>
