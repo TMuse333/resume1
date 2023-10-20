@@ -9,7 +9,8 @@ import Footer from './footer';
 
 
 
-
+import ExperienceCarousel from './experienceCarousel';
+import BulletPointList from './bulletPointList';
 import Campaign from './campaign';
 import Dal from './dal';
 
@@ -23,6 +24,9 @@ function MainLayout({ children }) {
    <Campaign/>
    <Dal/>
    <Skills/>
+   {/* <BulletPointList/> */}
+  {/* <Carousel/> */}
+    {/* <ExperienceCarousel/> */}
     <ContactForm/>
     <Footer/>
     </>

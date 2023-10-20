@@ -23,6 +23,9 @@ function MainLayout({ children }) {
    <Campaign/>
    <Dal/>
    <Skills/>
+   {/* <BulletPointList/> */}
+  {/* <Carousel/> */}
+    {/* <ExperienceCarousel/> */}
     <ContactForm/>
     <Footer/>
     </>
