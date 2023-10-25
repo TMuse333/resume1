@@ -45,6 +45,7 @@ html {
   /* height: 80vw;
   width:70vw; */
   height: 80vw;
+  
 }
 
 .profile-picture{
@@ -56,6 +57,7 @@ max-height: 800px;
 max-width: 550px; */
 
 height:460px;
+background-color: grey;
 
 
 }

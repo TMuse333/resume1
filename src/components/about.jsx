@@ -3,6 +3,7 @@ import { motion, useAnimation } from 'framer-motion';
 
 import TMuse from '../images/be-about-it.png';
 import suit from '../images/thomas-full-body-1.jpg';
+import smile from '../images/smiley-tom.png'
 
 const About = () => {
   const [animateP, setAnimateP] = useState(false);
@@ -31,7 +32,7 @@ const About = () => {
 
       <motion.img
         className="profile-picture"
-        src={suit}
+        src={smile}
         alt="Profile"
       />
 
