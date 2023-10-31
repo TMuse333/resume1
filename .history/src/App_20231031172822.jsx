@@ -24,7 +24,7 @@ function App() {
    <Routes>
       
       <Route path='/' element={<MainLayout/>}/>
-    <Route path='resume' element={<ResumePDF/>}/>
+    <Route path='resume' element={<ResumePDF/>}
       </Routes>
       </SkillProvider>
 

@@ -43,30 +43,33 @@ const Navbar = () => {
 
   const style = {
 
-    opacity: subMenuVisible ? 1 : 0
-    ,
+    opacity: subMenuVisible ? 1 : 0,
+    transition:'opacity 0.3s ease-in-out'
+    
    
   };
 
   return (
     <div className='header-container'>
-      <div className='logo'>TMuse</div>
+    
       <div className='list-container'>
         <button onClick={toggleSubMenu} className='nav-button'>
-          press me
+          nav
         </button>
         <ul style={style} className='nav-list'>
+
           
-          <li onClick={()=>scrollToSection('about')}>Career objective</li>
+          
+          <li onClick={()=>scrollToSection('about')}>About me</li>
       
 
         
-          <li onClick={()=>scrollToSection('projects')}>progress</li>
+          <li onClick={()=>scrollToSection('campaign')}>experience</li>
     
 
           <li onClick={()=>scrollToSection('skills')}>skills</li>
           
-
+          <li>resume</li>
           
           <li onClick={()=>scrollToSection('contact')}> Contact</li>
        

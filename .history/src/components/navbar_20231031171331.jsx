@@ -1,6 +1,5 @@
 import React, { useState,useEffect } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 
 
 
@@ -52,7 +51,7 @@ const Navbar = () => {
 
   return (
     <div className='header-container'>
-    
+      {/* <div className='logo'>Thomas Musial</div> */}
       <div className='list-container'>
         <button onClick={toggleSubMenu} className='nav-button'>
           nav
@@ -70,10 +69,7 @@ const Navbar = () => {
 
           <li onClick={()=>scrollToSection('skills')}>skills</li>
           
-          <li >
-            <Link to="/resume"
-            style={{color:'white'}}>
-            resume </Link></li>
+          
           
           <li onClick={()=>scrollToSection('contact')}> Contact</li>
        

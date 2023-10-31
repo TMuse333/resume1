@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 
 
@@ -43,30 +44,34 @@ const Navbar = () => {
 
   const style = {
 
-    opacity: subMenuVisible ? 1 : 0
-    ,
+    opacity: subMenuVisible ? 1 : 0,
+    transition:'opacity 0.3s ease-in-out'
+    
    
   };
 
   return (
     <div className='header-container'>
-      <div className='logo'>TMuse</div>
+    
       <div className='list-container'>
         <button onClick={toggleSubMenu} className='nav-button'>
-          press me
+          nav
         </button>
         <ul style={style} className='nav-list'>
+
           
-          <li onClick={()=>scrollToSection('about')}>Career objective</li>
+          
+          <li onClick={()=>scrollToSection('about')}>About me</li>
       
 
         
-          <li onClick={()=>scrollToSection('projects')}>projects</li>
+          <li onClick={()=>scrollToSection('campaign')}>experience</li>
     
 
           <li onClick={()=>scrollToSection('skills')}>skills</li>
           
-
+          <li>
+            <Link to="/resume"resume</li>
           
           <li onClick={()=>scrollToSection('contact')}> Contact</li>
        

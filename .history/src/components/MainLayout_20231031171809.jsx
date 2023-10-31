@@ -8,7 +8,11 @@ import Footer from './footer';
 
 
 
-import ExperienceCarousel from './experienceCarousel';
+
+
+import Campaign from './campaign';
+import Dal from './dal';
+
 
  // Replace with the actual path to your Navbar component
 
@@ -17,9 +21,9 @@ function MainLayout({ children }) {
    <>
    <Navbar/>
    <About/>
+   <Campaign/>
+   <Dal/>
    <Skills/>
-    <ExperienceCarousel/>
-   
     <ContactForm/>
     <Footer/>
     </>

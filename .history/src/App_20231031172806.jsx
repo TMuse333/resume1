@@ -19,12 +19,12 @@ import ResumePDF from './components/resume';
 function App() {
   return (
     <>
-
+<ResumePDF/>
     <SkillProvider>
    <Routes>
       
       <Route path='/' element={<MainLayout/>}/>
-    <Route path='resume' element={<ResumePDF/>}/>
+    <Route path=''
       </Routes>
       </SkillProvider>
 

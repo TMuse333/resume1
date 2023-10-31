@@ -13,6 +13,7 @@ import Footer from './footer';
 import Campaign from './campaign';
 import Dal from './dal';
 
+
  // Replace with the actual path to your Navbar component
 
 function MainLayout({ children }) {

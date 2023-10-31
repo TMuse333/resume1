@@ -71,8 +71,7 @@ const Navbar = () => {
           <li onClick={()=>scrollToSection('skills')}>skills</li>
           
           <li >
-            <Link to="/resume"
-            style={{color:'white'}}>
+            <Link to="/resume">
             resume </Link></li>
           
           <li onClick={()=>scrollToSection('contact')}> Contact</li>

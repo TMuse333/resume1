@@ -13,7 +13,7 @@ import {
 import MainLayout from './components/MainLayout';
 
 import { SkillProvider } from './context/context'
-import ResumePDF from './components/resume';
+import 
 
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
    <Routes>
       
       <Route path='/' element={<MainLayout/>}/>
-    <Route path='resume' element={<ResumePDF/>}/>
+    
       </Routes>
       </SkillProvider>
 

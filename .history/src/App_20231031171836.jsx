@@ -20,13 +20,13 @@ function App() {
   return (
     <>
 
-    <SkillProvider>
+    {/* <SkillProvider>
    <Routes>
       
       <Route path='/' element={<MainLayout/>}/>
-    <Route path='resume' element={<ResumePDF/>}/>
+    
       </Routes>
-      </SkillProvider>
+      </SkillProvider> */}
 
    
    </>
