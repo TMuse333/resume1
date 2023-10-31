@@ -16,7 +16,7 @@ const ResumePDF = () => {
 width:'100vw',
 display:'flex',
 flexDirection:'column',
-justifyContent:'center'}}
+justifyContent'center}}
     >
         <Link to ="/">
       <button

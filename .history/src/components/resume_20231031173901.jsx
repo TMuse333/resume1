@@ -12,25 +12,14 @@ const ResumePDF = () => {
   return (
     <div
      style={{transform:'translateY(-2rem)',
-    height:'100%',backgroundColor:'black',
-width:'100vw',
-display:'flex',
-flexDirection:'column',
-justifyContent:'center'}}
+    height:'100%',back}}
     >
         <Link to ="/">
       <button
-      style={{transform:'translateY(3rem)',
-    marginLeft:'auto',
-marginRight:'auto'}
-      }>Back to website</button>
+      style={{transform:'translateY(3rem)'}}>Back to website</button>
       </Link>
       <img src={resume}
-      style={{width:'100vw',
-      maxWidth:'980px',
-      marginLeft:'auto',
-      marginRight:'auto',
-      textAlign:'center'}}/>
+      style={{width:'100vw'}}/>
     </div>
   );
 };

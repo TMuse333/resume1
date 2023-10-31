@@ -15,14 +15,12 @@ const ResumePDF = () => {
     height:'100%',backgroundColor:'black',
 width:'100vw',
 display:'flex',
-flexDirection:'column',
-justifyContent:'center'}}
+flexDirection:'column'}}
     >
         <Link to ="/">
       <button
       style={{transform:'translateY(3rem)',
-    marginLeft:'auto',
-marginRight:'auto'}
+    marginLeft'auto}
       }>Back to website</button>
       </Link>
       <img src={resume}

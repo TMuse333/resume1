@@ -15,8 +15,7 @@ const ResumePDF = () => {
     height:'100%',backgroundColor:'black',
 width:'100vw',
 display:'flex',
-flexDirection:'column',
-justifyContent:'center'}}
+flexDirection:'column'}}
     >
         <Link to ="/">
       <button
