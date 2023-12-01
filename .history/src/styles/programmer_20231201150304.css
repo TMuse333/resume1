@@ -1,0 +1,42 @@
+
+.learning-list li{
+    list-style-type: none;
+    margin-bottom: 5px;
+
+    
+}
+
+.card-game-learning {
+    background-color: rgb(40, 3, 3);
+}
+
+.card-video{
+    width:300px
+}
+
+.card-game-git{
+    width:300px
+}
+
+.card-git-link{
+    color:red
+}
+
+
+
+@media screen and (min-width: 760px)
+and (min-height: 415px){
+    .card-video{
+        width:50vw;
+        max-width: 800px;
+    }
+
+    .card-game-git{
+        width:50vw;
+        max-width: 800px;
+    }
+
+    .card-game-learning li{
+        font-size: 20px;
+    }
+}

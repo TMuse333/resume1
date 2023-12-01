@@ -1,1 +1,0 @@
-import campaign from 'src/images/campaign-2021.JPG'

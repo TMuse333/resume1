@@ -1,0 +1,26 @@
+
+.learning-list li{
+    list-style-type: none;
+    margin-bottom: 5px;
+
+    
+}
+
+.card-game-learning {
+    background-color: rgb(40, 3, 3);
+}
+
+.card-video{
+    width:300px
+}
+
+
+
+
+@media screen and (min-width: 760px)
+and (min-height: 415px){
+    .card-video{
+        width:50vw;
+        max-width: 800px;
+    }
+}
