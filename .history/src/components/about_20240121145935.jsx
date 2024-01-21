@@ -30,10 +30,11 @@ const About = () => {
         {/* <motion.h2>Salesman</motion.h2> */}
       </motion.div>
 
-      <motion.img
+      <img
         className="profile-picture"
         src={smile}
         alt="Profile"
+        loading='lazy'
       />
 
       <motion.div
@@ -45,9 +46,9 @@ const About = () => {
         }}
         id="about"
       >
-        <motion.h1>Want a great e to train? Look no further.</motion.h1>
+        <motion.h1>Want a hard worker on your team? Look no further.</motion.h1>
         <motion.p>
-          Hello, I'm Thomas Musial, a 20-year-old aspiring salesman with a strong foundation for success. A decade of competitive basketball, rigorous strength training, and two years of computer science at Dalhousie along with a relentless work ethic have prepared me to be an exceptional salesman ready to make you money.
+          Hello, I'm Thomas Musial, a 20-year-old aspiring salesman or programmer with a strong foundation for success. A decade of competitive basketball, rigorous strength training, and two years of computer science at Dalhousie along with a relentless work ethic have prepared me to be an exceptional salesman ready to make you money.
         </motion.p>
       </motion.div>
     </motion.div>

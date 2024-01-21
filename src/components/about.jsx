@@ -30,10 +30,11 @@ const About = () => {
         {/* <motion.h2>Salesman</motion.h2> */}
       </motion.div>
 
-      <motion.img
+      <img
         className="profile-picture"
         src={smile}
         alt="Profile"
+        loading='lazy'
       />
 
       <motion.div
