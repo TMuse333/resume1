@@ -64,7 +64,7 @@ const Programming = () => {
 
       <div className="card-video-container">
         <video className="card-video" controls>
-          <source src={vid2} />
+          <source src={video} />
         </video>
       </div>
 

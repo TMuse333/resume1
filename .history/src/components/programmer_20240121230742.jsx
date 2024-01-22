@@ -62,12 +62,6 @@ const Programming = () => {
         </video>
       </div>
 
-      <div className="card-video-container">
-        <video className="card-video" controls>
-          <source src={vid2} />
-        </video>
-      </div>
-
  <a className='card-link'
  style={style('game')}
  onMouseEnter={()=>handleMouseEnter('game')}
