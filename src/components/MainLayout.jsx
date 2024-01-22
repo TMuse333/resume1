@@ -13,6 +13,7 @@ import Footer from './footer';
 import Campaign from './campaign';
 import Dal from './dal';
 import Programming from './programmer';
+import Testimonials from './testimonials';
 
 
  // Replace with the actual path to your Navbar component
@@ -26,6 +27,7 @@ function MainLayout({ children }) {
    <Dal/>
    <Skills/>
    <Programming/>
+   <Testimonials/>
     <ContactForm/>
     <Footer/>
     </>

@@ -36,6 +36,7 @@ const About = () => {
         alt="Profile"
         loading='lazy'
       />
+      
 
       <motion.div
         className="about"
