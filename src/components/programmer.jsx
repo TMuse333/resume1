@@ -4,7 +4,7 @@ import game from '../images/quantum-card-game.png';
 import video from '../images/quantum-example.mp4';
 import git from '../images/quantum-git.png';
 import '../styles/programmer.css';
-import vid2 from '../media/cheat-curls.mp4'
+
 const Programming = () => {
   const [animateList, setAnimateList] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
@@ -62,11 +62,7 @@ const Programming = () => {
         </video>
       </div>
 
-      <div className="card-video-container">
-        <video className="card-video" controls>
-          <source src={vid2} />
-        </video>
-      </div>
+
 
  <a className='card-link'
  style={style('game')}
