@@ -27,7 +27,7 @@ function MainLayout({ children }) {
    <Dal/>
    <Skills/>
    <Programming/>
-
+   <Testimonials/>
     <ContactForm/>
     <Footer/>
     </>
